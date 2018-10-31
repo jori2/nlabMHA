@@ -17,6 +17,7 @@ public class GoalController : NetworkBehaviour {
 	}
 
 	void OnTriggerEnter(Collider collider){
+		Debug.Log ("enter!");
 		if(!isLocalPlayer){
 			return;
 		}

@@ -4,13 +4,14 @@ using UnityEngine;
 
 public class CloudController : MonoBehaviour {
 	private int scalecount;
+	GameObject player;
 	void Start(){
 		scalecount = 0;
+		player = GameObject.FindWithTag("Player");
 	}
 
 	void Update () {
 		//BillBoard
-		GameObject player = GameObject.FindWithTag("Player");
 		if (player != null) {
 			transform.LookAt (player.transform.position);
 		}

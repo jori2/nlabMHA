@@ -22,8 +22,9 @@ GameObject:
   - component: {fileID: 33112434114377834}
   - component: {fileID: 65180127753937518}
   - component: {fileID: 23164966948782608}
-  - component: {fileID: 54543770199463330}
   - component: {fileID: 114720631802710910}
+  - component: {fileID: 114894207749450052}
+  - component: {fileID: 54869837133240070}
   m_Layer: 0
   m_Name: Goal
   m_TagString: Untagged
@@ -85,7 +86,7 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1931319965502120}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!54 &54543770199463330
+--- !u!54 &54869837133240070
 Rigidbody:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -144,3 +145,14 @@ MonoBehaviour:
     i15: 134
   m_ServerOnly: 0
   m_LocalPlayerAuthority: 1
+--- !u!114 &114894207749450052
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1931319965502120}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 56cd887399d6248b5a83b12e431fbad9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

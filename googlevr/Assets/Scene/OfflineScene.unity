@@ -432,7 +432,7 @@ MonoBehaviour:
   m_NetworkPort: 7777
   m_ServerBindToIP: 0
   m_ServerBindAddress: 
-  m_NetworkAddress: 192.168.2.11
+  m_NetworkAddress: 192.168.100.152
   m_DontDestroyOnLoad: 1
   m_RunInBackground: 1
   m_ScriptCRCCheck: 1
@@ -1499,6 +1499,7 @@ Prefab:
     - {fileID: 114280344223415250, guid: c4457a347c5364ef492eba3b89aa5be2, type: 2}
     - {fileID: 114396983681835794, guid: c4457a347c5364ef492eba3b89aa5be2, type: 2}
     - {fileID: 65918500995099856, guid: c4457a347c5364ef492eba3b89aa5be2, type: 2}
+    - {fileID: 54240104340746784, guid: c4457a347c5364ef492eba3b89aa5be2, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: c4457a347c5364ef492eba3b89aa5be2, type: 2}
   m_IsPrefabParent: 0
 --- !u!1 &1967874727
