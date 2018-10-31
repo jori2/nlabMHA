@@ -432,7 +432,7 @@ MonoBehaviour:
   m_NetworkPort: 7777
   m_ServerBindToIP: 0
   m_ServerBindAddress: 
-  m_NetworkAddress: 192.168.10.150
+  m_NetworkAddress: 192.168.2.11
   m_DontDestroyOnLoad: 1
   m_RunInBackground: 1
   m_ScriptCRCCheck: 1
@@ -448,6 +448,7 @@ MonoBehaviour:
   - {fileID: 1719388485452088, guid: c4457a347c5364ef492eba3b89aa5be2, type: 2}
   - {fileID: 1102879903526710, guid: fe8ebaf7af5314344b02955b09c92bde, type: 2}
   - {fileID: 1143765830755400, guid: 80ffa3c3b7b854ad4a8005ab486f7191, type: 2}
+  - {fileID: 1931319965502120, guid: ff693b4d1a47343b8b7b130d62ec6986, type: 2}
   m_CustomConfig: 0
   m_MaxConnections: 4
   m_ConnectionConfig:
@@ -1472,11 +1473,32 @@ Prefab:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 65918500995099856, guid: c4457a347c5364ef492eba3b89aa5be2,
+        type: 2}
+      propertyPath: m_Size.z
+      value: 0.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 65918500995099856, guid: c4457a347c5364ef492eba3b89aa5be2,
+        type: 2}
+      propertyPath: m_Center.z
+      value: -0.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 65918500995099856, guid: c4457a347c5364ef492eba3b89aa5be2,
+        type: 2}
+      propertyPath: m_Size.x
+      value: 0.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 65918500995099856, guid: c4457a347c5364ef492eba3b89aa5be2,
+        type: 2}
+      propertyPath: m_Center.x
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 114673481263765132, guid: c4457a347c5364ef492eba3b89aa5be2, type: 2}
     - {fileID: 114077514638522350, guid: c4457a347c5364ef492eba3b89aa5be2, type: 2}
     - {fileID: 114280344223415250, guid: c4457a347c5364ef492eba3b89aa5be2, type: 2}
     - {fileID: 114396983681835794, guid: c4457a347c5364ef492eba3b89aa5be2, type: 2}
+    - {fileID: 65918500995099856, guid: c4457a347c5364ef492eba3b89aa5be2, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: c4457a347c5364ef492eba3b89aa5be2, type: 2}
   m_IsPrefabParent: 0
 --- !u!1 &1967874727

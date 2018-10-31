@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Networking;
-public class SpawnPlane : NetworkBehaviour {
+public class SpawnPlane: NetworkBehaviour {
 	public GameObject plane;
 	// Use this for initialization
 	void Start () {

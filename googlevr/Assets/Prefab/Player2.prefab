@@ -22,7 +22,7 @@ GameObject:
   - component: {fileID: 114325408633795298}
   - component: {fileID: 114193517770125086}
   - component: {fileID: 114254203671802046}
-  - component: {fileID: 114377212071780696}
+  - component: {fileID: 65380235010913570}
   m_Layer: 0
   m_Name: Player2
   m_TagString: Player2
@@ -327,6 +327,18 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1752604491400642}
   m_Mesh: {fileID: 10210, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!65 &65380235010913570
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1102879903526710}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.3, y: 1, z: 0.3}
+  m_Center: {x: 0, y: 0, z: -0.4}
 --- !u!81 &81157596851978516
 AudioListener:
   m_ObjectHideFlags: 1
@@ -509,6 +521,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 65017c359b5cd4416831f1f25c11b370, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isplayer1: 0
+  isplayer2: 1
+  goalPrefab: {fileID: 1931319965502120, guid: ff693b4d1a47343b8b7b130d62ec6986, type: 2}
 --- !u!114 &114328079193381496
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -553,19 +568,6 @@ MonoBehaviour:
   shaderFXAAPreset3: {fileID: 4800000, guid: c182fa94a5a0a4c02870641efcd38cd5, type: 3}
   shaderFXAAII: {fileID: 4800000, guid: cd5b323dcc592457790ff18b528f5e67, type: 3}
   shaderFXAAIII: {fileID: 4800000, guid: c547503fff0e8482ea5793727057041c, type: 3}
---- !u!114 &114377212071780696
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1102879903526710}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 86ba1b8dd56e64e608f4309644d54162, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  isplayer1: 0
-  isplayer2: 1
 --- !u!114 &114498239873752266
 MonoBehaviour:
   m_ObjectHideFlags: 1
