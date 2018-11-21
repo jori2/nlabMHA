@@ -56,10 +56,6 @@ public class DisplayData : MonoBehaviour {
 	void Start () {
 		controller = GameObject.Find("ThinkGear").GetComponent<ThinkGearController>();
 
-		Gattention = GameObject.Find ("Attention");
-		Gmeditation = GameObject.Find ("Meditation");
-		Gdelta = GameObject.Find ("Delta");
-
 		controller.UpdateRawdataEvent += OnUpdateRaw;
 		controller.UpdatePoorSignalEvent += OnUpdatePoorSignal;
 		controller.UpdateAttentionEvent += OnUpdateAttention;
@@ -219,9 +215,15 @@ public class DisplayData : MonoBehaviour {
 
 		#endif
 
-		Gattention.GetComponent<Text> ().text = "Attention =" + Attention;
-		Gmeditation.GetComponent<Text> ().text = "Meditation =" + Meditation;
-		Gdelta.GetComponent<Text> ().text = "Delta =" + Delta;
+		if(Gattention == null || Gmeditation == null || Gdelta == null){
+			Gattention = GameObject.Find ("Attention");
+			Gmeditation = GameObject.Find ("Meditation");
+			Gdelta = GameObject.Find ("Delta");
+		}else if(Gattention != null && Gmeditation != null && Gdelta != null){
+			Gattention.GetComponent<Text> ().text = "Attention =" + Attention;
+			Gmeditation.GetComponent<Text> ().text = "Meditation =" + Meditation;
+			Gdelta.GetComponent<Text> ().text = "Delta =" + Delta;
+		}
 	}
 	
 	/**
@@ -237,16 +239,16 @@ public class DisplayData : MonoBehaviour {
 		
 	}
 	
-	void OnGUI(){
-		GUILayout.BeginHorizontal();
-		GUILayout.Label("Demo App");
-		GUILayout.Space(Screen.width-250);
-		GUILayout.Label(signalIcons[(int)indexSignalIcons]);
-		GUILayout.EndHorizontal();
-		
-		if(GUI.Button( new Rect(190,20,100,80),"Init")){
-			UnityThinkGear.Init(true);
-		}
+//	void OnGUI(){
+//		GUILayout.BeginHorizontal();
+//		GUILayout.Label("Demo App");
+//		GUILayout.Space(Screen.width-250);
+//		GUILayout.Label(signalIcons[(int)indexSignalIcons]);
+//		GUILayout.EndHorizontal();
+//		
+//		if(GUI.Button( new Rect(190,20,100,80),"Init")){
+//			UnityThinkGear.Init(true);
+//		}
 		
 //		if(GUI.Button(new Rect(190,140,100,80),"Connect")){
 //			print("Connect Button CLick");
@@ -261,48 +263,48 @@ public class DisplayData : MonoBehaviour {
 //			#endif
 
 //		}
-		
-		if(GUI.Button(new Rect(190,250,100,80),"Quit")){
-			Application.Quit();
-		}
-
-		if(showListViewFlag){
-
-			//andrew code;  show device list view;
-			GUILayout.BeginArea (new Rect (rectX,rectY,rectWidth,rectHeight));
-			windowRect = GUILayout.Window (0, new Rect (rectX,rectY,rectWidth,rectHeight), DeviceListWindow, "Device List");
-			GUILayout.EndArea ();
-
-		}
-
-		
-		GUILayout.BeginVertical();
-		GUILayout.Label("Raw:" + Raw);
-		GUILayout.Label("PoorSignal:" + PoorSignal);
-		GUILayout.Label("Attention:" + Attention);
-		GUILayout.Label("Meditation:" + Meditation);
-		GUILayout.Label("Blink:" + Blink);
-		GUILayout.Label("Delta:" + Delta);
-		GUILayout.Label("Theta:" + Theta);
-		GUILayout.Label("LowAlpha:" + LowAlpha);
-		GUILayout.Label("HighAlpha:" + HighAlpha);
-		GUILayout.Label("LowBeta:" + LowBeta);
-		GUILayout.Label("HighBeta:" + HighBeta);
-		GUILayout.Label("LowGamma:" + LowGamma);
-		GUILayout.Label("HighGamma:" + HighGamma);
-        GUILayout.Label("");
-        GUILayout.Label("");
-        GUILayout.Label("EEG Algorithm output values");
-        GUILayout.Label("Attention:" + Algo_Attention);
-        GUILayout.Label("Meditation:" + Algo_Meditation);
-        GUILayout.Label("Delta:" + Algo_Delta);
-        GUILayout.Label("Theta:" + Algo_Theta);
-        GUILayout.Label("Alpha:" + Algo_Alpha);
-        GUILayout.Label("Beta:" + Algo_Beta);
-        GUILayout.Label("Gamma:" + Algo_Gamma);
-
-        GUILayout.EndVertical();
-	}	
+//		
+//		if(GUI.Button(new Rect(190,250,100,80),"Quit")){
+//			Application.Quit();
+//		}
+//
+//		if(showListViewFlag){
+//
+//			//andrew code;  show device list view;
+//			GUILayout.BeginArea (new Rect (rectX,rectY,rectWidth,rectHeight));
+//			windowRect = GUILayout.Window (0, new Rect (rectX,rectY,rectWidth,rectHeight), DeviceListWindow, "Device List");
+//			GUILayout.EndArea ();
+//
+//		}
+//
+//		
+//		GUILayout.BeginVertical();
+//		GUILayout.Label("Raw:" + Raw);
+//		GUILayout.Label("PoorSignal:" + PoorSignal);
+//		GUILayout.Label("Attention:" + Attention);
+//		GUILayout.Label("Meditation:" + Meditation);
+//		GUILayout.Label("Blink:" + Blink);
+//		GUILayout.Label("Delta:" + Delta);
+//		GUILayout.Label("Theta:" + Theta);
+//		GUILayout.Label("LowAlpha:" + LowAlpha);
+//		GUILayout.Label("HighAlpha:" + HighAlpha);
+//		GUILayout.Label("LowBeta:" + LowBeta);
+//		GUILayout.Label("HighBeta:" + HighBeta);
+//		GUILayout.Label("LowGamma:" + LowGamma);
+//		GUILayout.Label("HighGamma:" + HighGamma);
+//        GUILayout.Label("");
+//        GUILayout.Label("");
+//        GUILayout.Label("EEG Algorithm output values");
+//        GUILayout.Label("Attention:" + Algo_Attention);
+//        GUILayout.Label("Meditation:" + Algo_Meditation);
+//        GUILayout.Label("Delta:" + Algo_Delta);
+//        GUILayout.Label("Theta:" + Algo_Theta);
+//        GUILayout.Label("Alpha:" + Algo_Alpha);
+//        GUILayout.Label("Beta:" + Algo_Beta);
+//        GUILayout.Label("Gamma:" + Algo_Gamma);
+//
+//        GUILayout.EndVertical();
+//	}	
 
 	void DeviceListWindow (int windowID) {
 		var buttonStyle= new GUIStyle("Button");
