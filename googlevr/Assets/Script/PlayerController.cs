@@ -8,6 +8,8 @@ public class PlayerController : NetworkBehaviour {
 	[SerializeField] bool isplayer1;
 	[SerializeField] bool isplayer2;
 	[SerializeField] GameObject goalPrefab;
+	[SerializeField] GameObject phychicEffect;
+	private int currentAtt;
 
 	//CmdDestroyMutualObjを呼ぶ
 	public void CallDestroyMethod(GameObject enemy){
@@ -27,6 +29,8 @@ public class PlayerController : NetworkBehaviour {
 		if (!isLocalPlayer) {
 			return;
 		}
+		//effectの初期化
+		phychicEffect.gameObject.SetActive (false);
 		CmdSpawnGoal ();
 	}
 
@@ -55,6 +59,13 @@ public class PlayerController : NetworkBehaviour {
 			} else {
 				gameObject.SetActive (true);
 			}
+		}
+		//集中度によってリモコンにエフェクトを発生
+		currentAtt = DisplayData.Attention;
+		if (currentAtt >= 60) {
+			phychicEffect.gameObject.SetActive (true);
+		} else {
+			phychicEffect.gameObject.SetActive (false);
 		}
 	}
 }

@@ -11,6 +11,7 @@ public class CreateCloud : NetworkBehaviour {
 	//private GameObject player;
 	NetworkConnection conn;
 	Vector3 worldPos;
+	private int currentAtt;
 	void Start(){
 		//gameObject.GetComponent<NetworkIdentity> ().AssignClientAuthority (conn);
 		//player = GameObject.FindWithTag ("Player")
@@ -25,11 +26,16 @@ public class CreateCloud : NetworkBehaviour {
 //		if(!isLocalPlayer){
 //			return;
 //		}
-		PointerEventData pointerData = data as PointerEventData;
-		worldPos = pointerData.pointerCurrentRaycast.worldPosition;
-		Debug.Log (worldPos);
-		//player.GetComponent<PlayerController>().CallSpawnMethod (cloudinstance);
-		CmdInstanceCloud(worldPos);
+		currentAtt = DisplayData.Attention;
+		if(currentAtt >= 60){
+			PointerEventData pointerData = data as PointerEventData;
+			worldPos = pointerData.pointerCurrentRaycast.worldPosition;
+			Debug.Log (worldPos);
+			//player.GetComponent<PlayerController>().CallSpawnMethod (cloudinstance);
+			CmdInstanceCloud(worldPos);
+		}else{
+			
+		}
 	}
 
 	[Command]
@@ -39,6 +45,7 @@ public class CreateCloud : NetworkBehaviour {
 	}
 
 //	void Update (){
+//
 //		if (OfflineSceneManager.scenename = "MHAMain") {
 //			gameObject.SetActive (true);
 //		} else {

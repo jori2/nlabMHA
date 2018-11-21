@@ -8,17 +8,21 @@ public class PlayerShoot : NetworkBehaviour {
 
 	public GameObject bulletPrefab;
 	private Transform bulletSpawn;
+	private int currentAtt;
 
 	void Start (){
 		bulletSpawn = GameObject.FindWithTag ("ControllerVisual").transform;
 	}
 
 	void Update(){
+		currentAtt = DisplayData.Attention;
 		if (isLocalPlayer == false || OfflineSceneManager.scenename != "MHAMain2") {
 			return;
 		}
-		if(GvrController.ClickButtonDown == true){
-			Fire ();
+		if(currentAtt >= 60){
+			if(GvrController.ClickButtonDown == true){
+				Fire ();
+			}
 		}
 	}
 

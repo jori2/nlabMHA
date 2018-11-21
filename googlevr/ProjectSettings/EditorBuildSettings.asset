@@ -14,3 +14,6 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scene/MHAMain.unity
     guid: 320d16f8a53e54726a8c311247eea579
+  - enabled: 0
+    path: Assets/Scene/Mindfullness.unity
+    guid: d72fd87e506d04950ad0dc5cf5c3a050

@@ -540,6 +540,7 @@ MonoBehaviour:
   isplayer1: 0
   isplayer2: 1
   goalPrefab: {fileID: 1931319965502120, guid: ff693b4d1a47343b8b7b130d62ec6986, type: 2}
+  phychicEffect: {fileID: 100006, guid: 44dd4fdbb6f10429a844c51183a4c84e, type: 2}
 --- !u!114 &114328079193381496
 MonoBehaviour:
   m_ObjectHideFlags: 1

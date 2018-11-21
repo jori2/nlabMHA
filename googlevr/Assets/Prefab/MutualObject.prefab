@@ -581,6 +581,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c2c7e2e6abcf04cb991f767f096201c2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  DWindow: {fileID: 1302581523216882, guid: 6bd821d7c15b144afbb84f2993e36bcb, type: 2}
+  FireMonster: {fileID: 1328646319474466, guid: b48fb878d73a54fa28b7da9e73512c40,
+    type: 2}
 --- !u!135 &135117816136830826
 SphereCollider:
   m_ObjectHideFlags: 1
