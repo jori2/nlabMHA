@@ -33,7 +33,7 @@ GameObject:
   m_IsActive: 1
 --- !u!1 &1167256007527458
 GameObject:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   serializedVersion: 5
@@ -42,7 +42,7 @@ GameObject:
   - component: {fileID: 223960257263404460}
   - component: {fileID: 114333604318990598}
   - component: {fileID: 114569476204670700}
-  m_Layer: 5
+  m_Layer: 11
   m_Name: Canvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -59,7 +59,6 @@ GameObject:
   - component: {fileID: 4901595409591180}
   - component: {fileID: 20303422487422314}
   - component: {fileID: 124636941691767438}
-  - component: {fileID: 81307957614503802}
   m_Layer: 0
   m_Name: Camera
   m_TagString: Subcamera
@@ -112,7 +111,7 @@ GameObject:
   - component: {fileID: 224462506562791168}
   - component: {fileID: 222461635603189178}
   - component: {fileID: 114625642389901732}
-  m_Layer: 5
+  m_Layer: 11
   m_Name: Attention
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -129,7 +128,7 @@ GameObject:
   - component: {fileID: 224356425420364572}
   - component: {fileID: 222387705105933866}
   - component: {fileID: 114744766693899352}
-  m_Layer: 5
+  m_Layer: 11
   m_Name: Meditation
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -189,7 +188,7 @@ GameObject:
   - component: {fileID: 224393654984531718}
   - component: {fileID: 222141770806969484}
   - component: {fileID: 114157617980446206}
-  m_Layer: 5
+  m_Layer: 11
   m_Name: Delta
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -224,7 +223,6 @@ GameObject:
   - component: {fileID: 4136265850575874}
   - component: {fileID: 20684045233074150}
   - component: {fileID: 124466403790165490}
-  - component: {fileID: 81575076298942776}
   m_Layer: 0
   m_Name: UICamera
   m_TagString: Untagged
@@ -246,7 +244,6 @@ Transform:
   - {fileID: 4887885674055558}
   - {fileID: 4136265850575874}
   - {fileID: 4901595409591180}
-  - {fileID: 224799216104543538}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -314,7 +311,8 @@ Transform:
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
+  m_Children:
+  - {fileID: 224799216104543538}
   m_Father: {fileID: 4041667485413824}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -404,7 +402,7 @@ Camera:
   m_Depth: 0
   m_CullingMask:
     serializedVersion: 2
-    m_Bits: 4294967263
+    m_Bits: 4294964223
   m_RenderingPath: -1
   m_TargetTexture: {fileID: 0}
   m_TargetDisplay: 0
@@ -440,7 +438,7 @@ Camera:
   m_Depth: 1
   m_CullingMask:
     serializedVersion: 2
-    m_Bits: 32
+    m_Bits: 2048
   m_RenderingPath: -1
   m_TargetTexture: {fileID: 0}
   m_TargetDisplay: 0
@@ -567,20 +565,6 @@ AudioListener:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1647672764867282}
-  m_Enabled: 1
---- !u!81 &81307957614503802
-AudioListener:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1208796393806280}
-  m_Enabled: 1
---- !u!81 &81575076298942776
-AudioListener:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1779264294114898}
   m_Enabled: 1
 --- !u!114 &114138765654889206
 MonoBehaviour:
@@ -1435,8 +1419,8 @@ RectTransform:
   - {fileID: 224462506562791168}
   - {fileID: 224356425420364572}
   - {fileID: 224393654984531718}
-  m_Father: {fileID: 4041667485413824}
-  m_RootOrder: 4
+  m_Father: {fileID: 4887885674055558}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
