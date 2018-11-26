@@ -30,8 +30,11 @@ public class PlayerController : NetworkBehaviour {
 			return;
 		}
 		//effectの初期化
-		phychicEffect.gameObject.SetActive (false);
-		CmdSpawnGoal ();
+		//phychicEffect.gameObject.SetActive (false);
+		phychicEffect.gameObject.transform.localScale = new Vector3 (0.5f,0.5f,0.5f);
+		if(SceneManager.GetActiveScene().name == "MHAMain"){
+			CmdSpawnGoal ();
+		}
 	}
 
 	[Command]
@@ -63,9 +66,12 @@ public class PlayerController : NetworkBehaviour {
 		//集中度によってリモコンにエフェクトを発生
 		currentAtt = DisplayData.Attention;
 		if (currentAtt >= 60) {
-			phychicEffect.gameObject.SetActive (true);
-		} else {
 			phychicEffect.gameObject.SetActive (false);
+			phychicEffect.gameObject.SetActive (true);
+			phychicEffect.gameObject.transform.localScale = new Vector3 (1f,1f,1f);
+		} else {
+			//phychicEffect.gameObject.SetActive (false);
+			phychicEffect.gameObject.transform.localScale = new Vector3 (0.5f,0.5f,0.5f);
 		}
 	}
 }

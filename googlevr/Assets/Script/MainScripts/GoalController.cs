@@ -7,30 +7,24 @@ public class GoalController : NetworkBehaviour {
 	public static bool Isgoal;
 	int colorvalue;
 	void Start(){
+		DontDestroyOnLoad (gameObject);
 		colorvalue = 0;
 		Isgoal = false;
 	}
 
-	// Update is called once per frame
-	void Update () {
-		
-	}
-
-	void OnTriggerEnter(Collider collider){
+	void OnCollisionEnter(Collision collision){
 		Debug.Log ("enter!");
-		if(!isLocalPlayer){
-			return;
-		}
-			if(Isgoal == false){
-				if(collider.gameObject.tag == ("Player")){
+		if(Isgoal == false){
+			if(collision.gameObject.tag == "Player"){
 					colorvalue = 1;
+					Debug.Log ("player1enter!");
 					CmdGoal (colorvalue);
 				}
-				if(collider.gameObject.tag == ("Player2")){
+			if(collision.gameObject.tag == "Player2"){
 					colorvalue = 2;
 					CmdGoal (colorvalue);
 				}
-			}
+		}
 	}
 
 	[Command]
@@ -40,6 +34,7 @@ public class GoalController : NetworkBehaviour {
 
 	[ClientRpc]
 	void RpcGoal(int colorval){
+		Debug.Log ("Rpc!");
 		GoalDoor (colorval);
 	}
 
