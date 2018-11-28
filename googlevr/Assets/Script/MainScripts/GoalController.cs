@@ -6,10 +6,12 @@ using UnityEngine.Networking;
 public class GoalController : NetworkBehaviour {
 	public static bool Isgoal;
 	int colorvalue;
+	GameObject goaltext;
 	void Start(){
 		DontDestroyOnLoad (gameObject);
 		colorvalue = 0;
 		Isgoal = false;
+		goaltext = GameObject.FindWithTag ("GoalText");
 	}
 
 	void OnCollisionEnter(Collision collision){
@@ -42,8 +44,10 @@ public class GoalController : NetworkBehaviour {
 		Isgoal = true;
 		if(colorval == 1){
 			GetComponent<Renderer> ().material.color = Color.red;
+			goaltext.GetComponent<GoalTextController> ().SetPlayerNumber (1);
 		}else if(colorval == 2){
 			GetComponent<Renderer> ().material.color = Color.blue;
+			goaltext.GetComponent<GoalTextController> ().SetPlayerNumber (2);
 		}
 	}
 }

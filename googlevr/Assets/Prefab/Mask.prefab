@@ -40,6 +40,7 @@ GameObject:
   - component: {fileID: 224317309926624304}
   - component: {fileID: 222241311510149546}
   - component: {fileID: 114345855982913750}
+  - component: {fileID: 114707088117683176}
   m_Layer: 11
   m_Name: RawImage
   m_TagString: Untagged
@@ -124,6 +125,18 @@ MonoBehaviour:
     y: 0
     width: 1
     height: 1
+--- !u!114 &114707088117683176
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1359265562099136}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6eb0ec1be46d94074b0bc8592f8e53c2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  defaultScale: {x: 0, y: 0, z: 0}
 --- !u!222 &222147272771406578
 CanvasRenderer:
   m_ObjectHideFlags: 1

@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class CloudController : MonoBehaviour {
 	private int scalecount;
-	GameObject player;
+	//GameObject player;
 	GameObject canvas;
 	[SerializeField] GameObject DWindow;
 	[SerializeField] GameObject FireMonster;
@@ -16,14 +16,14 @@ public class CloudController : MonoBehaviour {
 		//モンスター出現&縮小
 		Instantiate(FireMonster,new Vector3(gameObject.transform.position.x,gameObject.transform.position.y+1,gameObject.transform.position.z),gameObject.transform.rotation);
 		scalecount = 0;
-		player = GameObject.FindWithTag("Player");
+		//player = GameObject.FindWithTag("Player");
 	}
 
 	void Update () {
-		//BillBoard
-		if (player != null) {
-			transform.LookAt (player.transform.position);
-		}
+//		//BillBoard
+//		if (player != null) {
+//			transform.LookAt (player.transform.position);
+//		}
 		if(scalecount<=10){
 			gameObject.transform.localScale = new Vector3(0.01f * scalecount,0.01f * scalecount,0.01f * scalecount);
 			scalecount++;

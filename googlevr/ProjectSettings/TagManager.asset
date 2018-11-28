@@ -11,6 +11,7 @@ TagManager:
   - ControllerVisual
   - Subcamera
   - canvas
+  - GoalText
   layers:
   - Default
   - TransparentFX
