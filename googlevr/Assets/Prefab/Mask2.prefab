@@ -21,7 +21,7 @@ GameObject:
   - component: {fileID: 224819789148771968}
   - component: {fileID: 222450920021987104}
   - component: {fileID: 114997020942127422}
-  m_Layer: 11
+  m_Layer: 12
   m_Name: RawImage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -40,7 +40,7 @@ GameObject:
   - component: {fileID: 114543945165500112}
   - component: {fileID: 114595636972257568}
   - component: {fileID: 114352375117680082}
-  m_Layer: 11
+  m_Layer: 12
   m_Name: Mask2
   m_TagString: Untagged
   m_Icon: {fileID: 0}

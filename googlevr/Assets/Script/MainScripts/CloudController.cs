@@ -25,7 +25,7 @@ public class CloudController : MonoBehaviour {
 //			transform.LookAt (player.transform.position);
 //		}
 		if(scalecount<=10){
-			gameObject.transform.localScale = new Vector3(0.01f * scalecount,0.01f * scalecount,0.01f * scalecount);
+			gameObject.transform.localScale = new Vector3(0.1f * scalecount,0.1f * scalecount,0.07f * scalecount);
 			scalecount++;
 		}
 	}
