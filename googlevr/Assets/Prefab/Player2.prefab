@@ -23,7 +23,6 @@ GameObject:
   - component: {fileID: 114193517770125086}
   - component: {fileID: 114254203671802046}
   - component: {fileID: 65380235010913570}
-  - component: {fileID: 54231403904348956}
   m_Layer: 0
   m_Name: Player2
   m_TagString: Player2
@@ -735,21 +734,6 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1752604491400642}
   m_Mesh: {fileID: 10210, guid: 0000000000000000e000000000000000, type: 0}
---- !u!54 &54231403904348956
-Rigidbody:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1102879903526710}
-  serializedVersion: 2
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_UseGravity: 0
-  m_IsKinematic: 1
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
 --- !u!65 &65380235010913570
 BoxCollider:
   m_ObjectHideFlags: 1
@@ -1488,7 +1472,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   armModel: {fileID: 114498239873752266}
-  isDeactivatedWhenDisconnected: 1
+  isDeactivatedWhenDisconnected: 0
   controllerHand: 2
 --- !u!120 &120168136717305558
 LineRenderer:

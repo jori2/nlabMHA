@@ -884,7 +884,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   armModel: {fileID: 114824019046323380}
-  isDeactivatedWhenDisconnected: 1
+  isDeactivatedWhenDisconnected: 0
   controllerHand: 2
 --- !u!114 &114262334485042194
 MonoBehaviour:

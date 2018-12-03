@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Teleportation : MonoBehaviour {
 	private GameObject player;
@@ -9,7 +10,11 @@ public class Teleportation : MonoBehaviour {
 	private float distanceZ;
 	private int count = 0;
 	public void TeleportatTo(){
-		player = GameObject.FindWithTag ("Player");
+		if(SceneManager.GetActiveScene().name == "MHAMain"){
+			player = GameObject.FindWithTag ("Player");
+		}else if(SceneManager.GetActiveScene().name == "MHAMain2"){
+			player = GameObject.FindWithTag ("Player2");
+		}
 		distanceX = transform.position.x - player.gameObject.transform.position.x;
 		distanceZ = transform.position.z - player.gameObject.transform.position.z;
 		IsTransport = true;
