@@ -12,6 +12,13 @@ public class Teleportation : MonoBehaviour {
 	public void TeleportatTo(){
 		if(SceneManager.GetActiveScene().name == "MHAMain"){
 			player = GameObject.FindWithTag ("Player");
+			//MutualObjectのisPlayerを初期化
+			//選択したMutualObjectのisPlayerをtrue
+			GameObject[] MOJs = GameObject.FindGameObjectsWithTag ("MOJ");
+			for(int i = 0;i <= MOJs.Length; i++){
+				MOJs [i].GetComponent<MutualObjectController> ().isPlayer = false;
+			}
+			transform.root.gameObject.GetComponent<MutualObjectController> ().isPlayer = true;
 		}else if(SceneManager.GetActiveScene().name == "MHAMain2"){
 			player = GameObject.FindWithTag ("Player2");
 		}

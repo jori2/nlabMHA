@@ -12,6 +12,7 @@ TagManager:
   - Subcamera
   - canvas
   - GoalText
+  - MOJ
   layers:
   - Default
   - TransparentFX

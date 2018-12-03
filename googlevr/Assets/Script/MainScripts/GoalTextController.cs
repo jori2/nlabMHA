@@ -18,6 +18,7 @@ public class GoalTextController : MonoBehaviour {
 		}
 	}
 	//ゴールしたプレイヤーを表示
+	//プレイヤーの位置を固定する
 	public void SetPlayerNumber(int getplayernumber){
 		isgoaltext = true;
 		GetPlayerPosition ();
@@ -25,6 +26,10 @@ public class GoalTextController : MonoBehaviour {
 			gameObject.GetComponent<Text>().text = "Player1 Goal";
 		}else if(getplayernumber == 2){
 			gameObject.GetComponent<Text>().text = "Player2 Goal";
+		}else if(getplayernumber == 3){
+			gameObject.GetComponent<Text>().text = "Player1 GameOver";
+		}else if(getplayernumber == 4){
+			gameObject.GetComponent<Text>().text = "Player2 GameOver";
 		}
 	}
 
