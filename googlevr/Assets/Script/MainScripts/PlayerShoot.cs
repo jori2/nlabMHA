@@ -8,22 +8,25 @@ public class PlayerShoot : NetworkBehaviour {
 
 	public GameObject bulletPrefab;
 	private Transform bulletSpawn;
-	private int currentAtt;
+	//脳波計
+//	private int currentAtt;
 
 	void Start (){
 		bulletSpawn = GameObject.FindWithTag ("ControllerVisual").transform;
 	}
 
 	void Update(){
-		currentAtt = DisplayData.Attention;
+		//脳波計
+//		currentAtt = DisplayData.Attention;
 		if (isLocalPlayer == false || OfflineSceneManager.scenename != "MHAMain2") {
 			return;
 		}
-		if(currentAtt >= 60){
+		//脳波計
+//		if(currentAtt >= 60){
 			if(GvrController.ClickButtonDown == true){
 				Fire ();
 			}
-		}
+//		}
 	}
 
 

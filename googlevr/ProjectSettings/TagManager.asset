@@ -13,6 +13,8 @@ TagManager:
   - canvas
   - GoalText
   - MOJ
+  - EnemyBullet
+  - GM
   layers:
   - Default
   - TransparentFX

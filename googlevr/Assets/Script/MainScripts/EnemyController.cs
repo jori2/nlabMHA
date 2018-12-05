@@ -1,11 +1,11 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class EnemyController : MonoBehaviour {
 	public GameObject redbulletPrefab;
 	public Transform enemybulletSpawn;
-	private GameObject target;
 	private float time;
 	private Animation_Test anim;
 	private bool idle;
@@ -14,10 +14,14 @@ public class EnemyController : MonoBehaviour {
 	//親オブジェクト
 	private GameObject parent;
 	private GameObject player;
+	private GameObject gm;
 	// Use this for initialization
 	void Start () {
 		parent = transform.root.gameObject;
-		player = GameObject.FindWithTag ("Player2");
+		gm = GameObject.FindWithTag ("GM");
+		if(SceneManager.GetActiveScene().name == "MHAMain" || SceneManager.GetActiveScene().name == "MHAMain2"){
+			player = GameObject.FindWithTag ("Player2");
+		}
 		anim = GetComponent<Animation_Test> ();
 		idle = true;
 		attack = false;
@@ -26,8 +30,9 @@ public class EnemyController : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		target = GameObject.FindWithTag ("Player2");
-		transform.LookAt (target.gameObject.transform.position);
+		if(SceneManager.GetActiveScene().name == "MHAMain" || SceneManager.GetActiveScene().name == "MHAMain2"){
+			transform.LookAt (player.gameObject.transform.position);
+		}
 		time += Time.deltaTime;
 		if(time > 3){
 			idle = false;
@@ -63,11 +68,10 @@ public class EnemyController : MonoBehaviour {
 			Invoke ("DestroyEnemy",1f);
 		}
 	}
-
-
+		
 	void DestroyEnemy(){
 		idle = true;
 		death = false;
-		player.gameObject.GetComponent<PlayerController> ().CallDestroyMethod (parent);
+		gm.gameObject.GetComponent<GameManagerController> ().CallDestroyMethod (parent);
 	}
 }

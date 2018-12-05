@@ -602,7 +602,7 @@ MonoBehaviour:
   m_NetworkPort: 7777
   m_ServerBindToIP: 0
   m_ServerBindAddress: 
-  m_NetworkAddress: 192.168.1.2
+  m_NetworkAddress: 192.168.100.152
   m_DontDestroyOnLoad: 1
   m_RunInBackground: 1
   m_ScriptCRCCheck: 1
@@ -619,6 +619,7 @@ MonoBehaviour:
   - {fileID: 1102879903526710, guid: fe8ebaf7af5314344b02955b09c92bde, type: 2}
   - {fileID: 1143765830755400, guid: 80ffa3c3b7b854ad4a8005ab486f7191, type: 2}
   - {fileID: 1931319965502120, guid: ff693b4d1a47343b8b7b130d62ec6986, type: 2}
+  - {fileID: 1215967429555672, guid: 521d6e71e3784445bb880a004a8d7208, type: 2}
   m_CustomConfig: 0
   m_MaxConnections: 4
   m_ConnectionConfig:
@@ -878,7 +879,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &525908827
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1173,6 +1174,10 @@ Prefab:
     - target: {fileID: 4257875871943754, guid: ef446bb071408448a88e6618b44c2ff9, type: 2}
       propertyPath: m_RootOrder
       value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 1684584286829616, guid: ef446bb071408448a88e6618b44c2ff9, type: 2}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: ef446bb071408448a88e6618b44c2ff9, type: 2}

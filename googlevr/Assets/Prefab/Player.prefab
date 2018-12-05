@@ -203,7 +203,7 @@ GameObject:
   - component: {fileID: 114262334485042194}
   - component: {fileID: 114100610533124050}
   m_Layer: 11
-  m_Name: GoalText
+  m_Name: ProcessText
   m_TagString: GoalText
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -238,6 +238,7 @@ GameObject:
   - component: {fileID: 114077514638522350}
   - component: {fileID: 114280344223415250}
   - component: {fileID: 65918500995099856}
+  - component: {fileID: 54141465484244410}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -568,7 +569,7 @@ Camera:
   m_Depth: 0
   m_CullingMask:
     serializedVersion: 2
-    m_Bits: 4294963912
+    m_Bits: 4294959816
   m_RenderingPath: -1
   m_TargetTexture: {fileID: 8400000, guid: 40a5d14000ba942d389b4540201a98d1, type: 2}
   m_TargetDisplay: 1
@@ -734,6 +735,21 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1793471023452614}
   m_Mesh: {fileID: 4300000, guid: 581a0d1f069aa2d41b4112fb6b01244e, type: 3}
+--- !u!54 &54141465484244410
+Rigidbody:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1719388485452088}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 126
+  m_CollisionDetection: 1
 --- !u!65 &65918500995099856
 BoxCollider:
   m_ObjectHideFlags: 1
@@ -1345,9 +1361,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 65017c359b5cd4416831f1f25c11b370, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  goalPrefab: {fileID: 1931319965502120, guid: ff693b4d1a47343b8b7b130d62ec6986, type: 2}
+  gmPrefab: {fileID: 1215967429555672, guid: 521d6e71e3784445bb880a004a8d7208, type: 2}
   isplayer1: 1
   isplayer2: 0
-  goalPrefab: {fileID: 1931319965502120, guid: ff693b4d1a47343b8b7b130d62ec6986, type: 2}
   phychicEffect: {fileID: 1513954911022376}
 --- !u!114 &114727060821102484
 MonoBehaviour:

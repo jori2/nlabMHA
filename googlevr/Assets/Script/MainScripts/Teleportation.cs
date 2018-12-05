@@ -15,8 +15,8 @@ public class Teleportation : MonoBehaviour {
 			//MutualObjectのisPlayerを初期化
 			//選択したMutualObjectのisPlayerをtrue
 			GameObject[] MOJs = GameObject.FindGameObjectsWithTag ("MOJ");
-			for(int i = 0;i <= MOJs.Length; i++){
-				MOJs [i].GetComponent<MutualObjectController> ().isPlayer = false;
+			foreach(GameObject MOJ in MOJs){
+				MOJ.GetComponent<MutualObjectController> ().isPlayer = false;
 			}
 			transform.root.gameObject.GetComponent<MutualObjectController> ().isPlayer = true;
 		}else if(SceneManager.GetActiveScene().name == "MHAMain2"){
