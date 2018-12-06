@@ -18,7 +18,6 @@ public class EnemyController : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		parent = transform.root.gameObject;
-		gm = GameObject.FindWithTag ("GM");
 		if(SceneManager.GetActiveScene().name == "MHAMain" || SceneManager.GetActiveScene().name == "MHAMain2"){
 			player = GameObject.FindWithTag ("Player2");
 		}
@@ -72,6 +71,7 @@ public class EnemyController : MonoBehaviour {
 	void DestroyEnemy(){
 		idle = true;
 		death = false;
+		gm = GameObject.FindWithTag ("GM2");
 		gm.gameObject.GetComponent<GameManagerController> ().CallDestroyMethod (parent);
 	}
 }

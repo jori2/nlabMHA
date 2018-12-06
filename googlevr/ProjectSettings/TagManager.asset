@@ -15,6 +15,9 @@ TagManager:
   - MOJ
   - EnemyBullet
   - GM
+  - Goal1
+  - Goal2
+  - GM2
   layers:
   - Default
   - TransparentFX

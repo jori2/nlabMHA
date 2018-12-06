@@ -16,10 +16,8 @@ public class PlayerController : NetworkBehaviour {
 		if (!isLocalPlayer) {
 			return;
 		}
-		if(SceneManager.GetActiveScene().name == "MHAMain"){
-			CmdSpawnGoal ();
-			CmdSpawnGameManager ();
-		}
+		CmdSpawnGoal ();
+		CmdSpawnGameManager ();
 		//effectの初期化
 		//phychicEffect.gameObject.SetActive (false);
 		phychicEffect.gameObject.transform.localScale = new Vector3 (0.5f,0.5f,0.5f);

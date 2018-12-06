@@ -2,30 +2,45 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Networking;
+using UnityEngine.SceneManagement;
 
 public class GoalController : NetworkBehaviour {
 	public static bool Isgoal;
+	[SerializeField] bool isplayer1;
+	[SerializeField] bool isplayer2;
 	int colorvalue;
 	GameObject goaltext;
 	void Start(){
-		DontDestroyOnLoad (gameObject);
+		if(SceneManager.GetActiveScene().name == "MHAMain" && gameObject.tag == "Goal2"){
+			gameObject.GetComponent<BoxCollider> ().enabled = false;
+		}else if(SceneManager.GetActiveScene().name == "MHAMain2" && gameObject.tag == "Goal"){
+			gameObject.GetComponent<BoxCollider> ().enabled = false;
+		}
+		//DontDestroyOnLoad (gameObject);
 		colorvalue = 0;
 		Isgoal = false;
 		goaltext = GameObject.FindWithTag ("GoalText");
 	}
 
 	void OnCollisionEnter(Collision collision){
-		Debug.Log ("enter!");
-		if(Isgoal == false){
-			if(collision.gameObject.tag == "Player"){
+		if (isplayer1) {
+			Debug.Log ("enter!");
+			if (Isgoal == false) {
+				if (collision.gameObject.tag == "Player") {
 					colorvalue = 1;
 					Debug.Log ("player1enter!");
 					CmdGoal (colorvalue);
 				}
-			if(collision.gameObject.tag == "Player2"){
-					colorvalue = 2;
-					CmdGoal (colorvalue);
+			}
+		}
+		if(isplayer2){
+			Debug.Log ("enter!");
+			if (Isgoal == false) {
+				if(collision.gameObject.tag == "Player2"){
+						colorvalue = 2;
+						CmdGoal (colorvalue);
 				}
+			}
 		}
 	}
 

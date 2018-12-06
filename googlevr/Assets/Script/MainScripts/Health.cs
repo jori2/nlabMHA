@@ -16,7 +16,6 @@ public class Health : NetworkBehaviour {
 		maxhealth = 10;
 		damage = 0;
 		isGameOver = false;
-		gm = GameObject.FindWithTag ("GM");
 	}
 
 	//敵の玉が当たったらdamageを１増やす
@@ -33,6 +32,7 @@ public class Health : NetworkBehaviour {
 			}
 			if(damage>=maxhealth){
 				if(isGameOver == false){
+					gm = GameObject.FindWithTag ("GM2");
 					gm.gameObject.GetComponent<GameManagerController> ().CallP2GameOverMethod ();
 					isGameOver = true;
 				}

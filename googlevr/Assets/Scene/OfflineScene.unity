@@ -602,7 +602,7 @@ MonoBehaviour:
   m_NetworkPort: 7777
   m_ServerBindToIP: 0
   m_ServerBindAddress: 
-  m_NetworkAddress: 192.168.100.152
+  m_NetworkAddress: 192.168.1.14
   m_DontDestroyOnLoad: 1
   m_RunInBackground: 1
   m_ScriptCRCCheck: 1
@@ -620,6 +620,8 @@ MonoBehaviour:
   - {fileID: 1143765830755400, guid: 80ffa3c3b7b854ad4a8005ab486f7191, type: 2}
   - {fileID: 1931319965502120, guid: ff693b4d1a47343b8b7b130d62ec6986, type: 2}
   - {fileID: 1215967429555672, guid: 521d6e71e3784445bb880a004a8d7208, type: 2}
+  - {fileID: 1343811344472002, guid: 828773e401e1045fab60bf273cec4be2, type: 2}
+  - {fileID: 1436316487008414, guid: 8e8bd272a8fcd4b4a966d551734ef133, type: 2}
   m_CustomConfig: 0
   m_MaxConnections: 4
   m_ConnectionConfig:

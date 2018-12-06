@@ -1248,8 +1248,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 65017c359b5cd4416831f1f25c11b370, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  goalPrefab: {fileID: 1931319965502120, guid: ff693b4d1a47343b8b7b130d62ec6986, type: 2}
-  gmPrefab: {fileID: 1215967429555672, guid: 521d6e71e3784445bb880a004a8d7208, type: 2}
+  goalPrefab: {fileID: 1343811344472002, guid: 828773e401e1045fab60bf273cec4be2, type: 2}
+  gmPrefab: {fileID: 1436316487008414, guid: 8e8bd272a8fcd4b4a966d551734ef133, type: 2}
   isplayer1: 0
   isplayer2: 1
   phychicEffect: {fileID: 1423120418144716}

@@ -6,6 +6,7 @@ using UnityEngine.SceneManagement;
 
 public class GameManagerController : NetworkBehaviour {
 	private GameObject goaltext;
+	private GameObject gm1;
 	// Use this for initialization
 	void Start () {
 		//ゴールテキストの検索
@@ -18,6 +19,16 @@ public class GameManagerController : NetworkBehaviour {
 //			return;
 //		}
 		CmdDestroyMutualObj (enemy);
+	}
+
+	//CmdP1GameOverMessageを呼ぶ
+	public void CallP1GameOverMessage(){
+		CmdP1GameOverMessage ();
+	}
+
+	//CmdDestroyMutualObjMessageを実行
+	public void CallDestroyMutualObjMessage(GameObject Enemy){
+		CmdDestroyMutualObjMessage (Enemy);
 	}
 
 	public void CallP2GameOverMethod(){
@@ -58,24 +69,26 @@ public class GameManagerController : NetworkBehaviour {
 	//Player2がゲームオーバーしたことをサーバーに通知
 	[Command]
 	void CmdP2GameOverMessage(){
-//		if(!isServer){
-//			return;
-//		}
+		if(!isServer){
+			return;
+		}
 		Debug.Log ("CmdP2GameOver");
 		RpcP2GameOverMessage ();
 	}
 
+	//RpcDestroyMutualObjはgm2が実行し、その後の処理はgmが実行
 	//MHAMainに該当の敵が破壊されたことを通知
 	//破壊された敵のMutualOnjectのisPlayerがtrueならCmdP1GameOverMessageを実行
 	//チェック後に該当のMOJを破壊
 	[ClientRpc]
 	void RpcDestroyMutualObj(GameObject Enemy){
 		if(SceneManager.GetActiveScene().name == "MHAMain"){
+			gm1 = GameObject.FindGameObjectWithTag ("GM");
 			GameObject parent = Enemy.transform.root.gameObject;
 			if (parent.GetComponent<MutualObjectController> ().isPlayer == true) {
-				CmdP1GameOverMessage ();
+				gm1.gameObject.GetComponent<GameManagerController> ().CallP1GameOverMessage ();
 			}
-			CmdDestroyMutualObjMessage (Enemy);
+			gm1.gameObject.GetComponent<GameManagerController>().CallDestroyMutualObjMessage (Enemy);
 		}
 	}
 

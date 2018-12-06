@@ -9,31 +9,31 @@ Prefab:
     m_Modifications: []
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
-  m_RootGameObject: {fileID: 1215967429555672}
+  m_RootGameObject: {fileID: 1436316487008414}
   m_IsPrefabParent: 1
---- !u!1 &1215967429555672
+--- !u!1 &1436316487008414
 GameObject:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   serializedVersion: 5
   m_Component:
-  - component: {fileID: 4903167617914864}
-  - component: {fileID: 114472820550552468}
-  - component: {fileID: 114648249503059678}
+  - component: {fileID: 4638984948064236}
+  - component: {fileID: 114469863412798422}
+  - component: {fileID: 114903505697821808}
   m_Layer: 0
-  m_Name: GameManager
-  m_TagString: GM
+  m_Name: GameManager2
+  m_TagString: GM2
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &4903167617914864
+--- !u!4 &4638984948064236
 Transform:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1215967429555672}
+  m_GameObject: {fileID: 1436316487008414}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
@@ -41,12 +41,12 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &114472820550552468
+--- !u!114 &114469863412798422
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1215967429555672}
+  m_GameObject: {fileID: 1436316487008414}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 372142912, guid: dc443db3e92b4983b9738c1131f555cb, type: 3}
@@ -55,30 +55,30 @@ MonoBehaviour:
   m_SceneId:
     m_Value: 0
   m_AssetId:
-    i0: 82
-    i1: 29
-    i2: 110
-    i3: 113
-    i4: 227
-    i5: 120
-    i6: 68
-    i7: 69
-    i8: 187
-    i9: 136
-    i10: 10
-    i11: 0
-    i12: 74
-    i13: 141
-    i14: 114
-    i15: 8
+    i0: 142
+    i1: 139
+    i2: 210
+    i3: 114
+    i4: 168
+    i5: 252
+    i6: 212
+    i7: 180
+    i8: 169
+    i9: 102
+    i10: 213
+    i11: 81
+    i12: 115
+    i13: 78
+    i14: 241
+    i15: 51
   m_ServerOnly: 0
   m_LocalPlayerAuthority: 1
---- !u!114 &114648249503059678
+--- !u!114 &114903505697821808
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1215967429555672}
+  m_GameObject: {fileID: 1436316487008414}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 20b332704ffb94fe9992dfdc7d8ece8d, type: 3}
