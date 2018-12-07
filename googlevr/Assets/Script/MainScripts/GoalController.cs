@@ -9,7 +9,7 @@ public class GoalController : NetworkBehaviour {
 	[SerializeField] bool isplayer1;
 	[SerializeField] bool isplayer2;
 	int colorvalue;
-	GameObject goaltext;
+	[SerializeField] GameObject goaltext;
 	void Start(){
 		if(SceneManager.GetActiveScene().name == "MHAMain" && gameObject.tag == "Goal2"){
 			gameObject.GetComponent<BoxCollider> ().enabled = false;
@@ -19,7 +19,7 @@ public class GoalController : NetworkBehaviour {
 		//DontDestroyOnLoad (gameObject);
 		colorvalue = 0;
 		Isgoal = false;
-		goaltext = GameObject.FindWithTag ("GoalText");
+
 	}
 
 	void OnCollisionEnter(Collision collision){
@@ -59,9 +59,21 @@ public class GoalController : NetworkBehaviour {
 		Isgoal = true;
 		if(colorval == 1){
 			GetComponent<Renderer> ().material.color = Color.red;
+			//ゴールテキストの検索
+			if(SceneManager.GetActiveScene().name == "MHAMain"){
+				goaltext = GameObject.FindWithTag ("GoalText");
+			}else if(SceneManager.GetActiveScene().name == "MHAMain2"){
+				goaltext = GameObject.FindWithTag ("GoalText2");
+			}
 			goaltext.GetComponent<GoalTextController> ().SetPlayerNumber (1);
 		}else if(colorval == 2){
 			GetComponent<Renderer> ().material.color = Color.blue;
+			//ゴールテキストの検索
+			if(SceneManager.GetActiveScene().name == "MHAMain"){
+				goaltext = GameObject.FindWithTag ("GoalText");
+			}else if(SceneManager.GetActiveScene().name == "MHAMain2"){
+				goaltext = GameObject.FindWithTag ("GoalText2");
+			}
 			goaltext.GetComponent<GoalTextController> ().SetPlayerNumber (2);
 		}
 	}

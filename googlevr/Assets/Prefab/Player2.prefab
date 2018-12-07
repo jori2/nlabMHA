@@ -216,7 +216,7 @@ GameObject:
   - component: {fileID: 114723673189631438}
   m_Layer: 11
   m_Name: ProcessText
-  m_TagString: GoalText
+  m_TagString: GoalText2
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

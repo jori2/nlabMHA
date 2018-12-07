@@ -12,8 +12,11 @@ public class CreateCloud : NetworkBehaviour {
 	NetworkConnection conn;
 	Vector3 worldPos;
 	//脳波計
-//	private int currentAtt;
+	private int currentAtt;
 	void Start(){
+		if(SceneManager.GetActiveScene().name == "MHAMain2"){
+			gameObject.GetComponent<MeshCollider> ().enabled = false;
+		}
 		//gameObject.GetComponent<NetworkIdentity> ().AssignClientAuthority (conn);
 		//player = GameObject.FindWithTag ("Player")
 //		if (OfflineSceneManager.scenename == "MHAMain") {
@@ -28,16 +31,16 @@ public class CreateCloud : NetworkBehaviour {
 //			return;
 //		}
 		//脳波計
-//		currentAtt = DisplayData.Attention;
-//		if(currentAtt >= 60){
+		currentAtt = DisplayData.Attention;
+		if(currentAtt >= 60){
 			PointerEventData pointerData = data as PointerEventData;
 			worldPos = pointerData.pointerCurrentRaycast.worldPosition;
 			Debug.Log (worldPos);
 			//player.GetComponent<PlayerController>().CallSpawnMethod (cloudinstance);
 			CmdInstanceCloud(worldPos);
-//		}else{
-//			
-//		}
+		}else{
+			
+		}
 	}
 
 	[Command]

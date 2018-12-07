@@ -61,14 +61,14 @@ public class PlayerController : NetworkBehaviour {
 			}
 		}
 		//集中度によってリモコンにエフェクトを発生
-//		currentAtt = DisplayData.Attention;
-//		if (currentAtt >= 60) {
-//			phychicEffect.gameObject.SetActive (false);
-//			phychicEffect.gameObject.SetActive (true);
-//			phychicEffect.gameObject.transform.localScale = new Vector3 (1f,1f,1f);
-//		} else {
-//			//phychicEffect.gameObject.SetActive (false);
-//			phychicEffect.gameObject.transform.localScale = new Vector3 (0.5f,0.5f,0.5f);
-//		}
+		currentAtt = DisplayData.Attention;
+		if (currentAtt >= 60) {
+			phychicEffect.gameObject.SetActive (false);
+			phychicEffect.gameObject.SetActive (true);
+			phychicEffect.gameObject.transform.localScale = new Vector3 (1f,1f,1f);
+		} else {
+			//phychicEffect.gameObject.SetActive (false);
+			phychicEffect.gameObject.transform.localScale = new Vector3 (0.5f,0.5f,0.5f);
+		}
 	}
 }

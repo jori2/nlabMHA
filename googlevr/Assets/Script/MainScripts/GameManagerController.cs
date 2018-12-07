@@ -5,12 +5,11 @@ using UnityEngine.Networking;
 using UnityEngine.SceneManagement;
 
 public class GameManagerController : NetworkBehaviour {
-	private GameObject goaltext;
+	[SerializeField] GameObject goaltext;
 	private GameObject gm1;
 	// Use this for initialization
 	void Start () {
-		//ゴールテキストの検索
-		goaltext = GameObject.FindWithTag ("GoalText");
+		
 	}
 
 	//CmdDestroyMutualObjを呼ぶ
@@ -54,6 +53,7 @@ public class GameManagerController : NetworkBehaviour {
 //		if(!isServer){
 //			return;
 //		}
+		Debug.Log("CmdP1GameOver");
 		RpcP1GameOverMessage ();
 	}
 
@@ -95,6 +95,13 @@ public class GameManagerController : NetworkBehaviour {
 	//SetPlayerNumberに3（Player1のゲームオーバー）を通知
 	[ClientRpc]
 	void RpcP1GameOverMessage(){
+		Debug.Log ("RpcP1GameOver");
+		//ゴールテキストの検索
+		if(SceneManager.GetActiveScene().name == "MHAMain"){
+			goaltext = GameObject.FindWithTag ("GoalText");
+		}else if(SceneManager.GetActiveScene().name == "MHAMain2"){
+			goaltext = GameObject.FindWithTag ("GoalText2");
+		}
 		goaltext.GetComponent<GoalTextController> ().SetPlayerNumber (3);
 	}
 
@@ -102,6 +109,12 @@ public class GameManagerController : NetworkBehaviour {
 	[ClientRpc]
 	void RpcP2GameOverMessage(){
 		Debug.Log ("RpcP2GameOver");
+		//ゴールテキストの検索
+		if(SceneManager.GetActiveScene().name == "MHAMain"){
+			goaltext = GameObject.FindWithTag ("GoalText");
+		}else if(SceneManager.GetActiveScene().name == "MHAMain2"){
+			goaltext = GameObject.FindWithTag ("GoalText2");
+		}
 		goaltext.GetComponent<GoalTextController> ().SetPlayerNumber (4);
 	}
 
