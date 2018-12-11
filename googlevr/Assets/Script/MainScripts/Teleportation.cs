@@ -9,6 +9,8 @@ public class Teleportation : MonoBehaviour {
 	private float distanceX;
 	private float distanceZ;
 	private int count = 0;
+	private AudioSource sound;
+
 	public void TeleportatTo(){
 		if(SceneManager.GetActiveScene().name == "MHAMain"){
 			player = GameObject.FindWithTag ("Player");
@@ -24,7 +26,13 @@ public class Teleportation : MonoBehaviour {
 		}
 		distanceX = transform.position.x - player.gameObject.transform.position.x;
 		distanceZ = transform.position.z - player.gameObject.transform.position.z;
+		sound.PlayOneShot (sound.clip);
 		IsTransport = true;
+	}
+
+	void Start(){
+		AudioSource[] audioSource = GetComponents<AudioSource> ();
+		sound = audioSource [0];
 	}
 
 	void Update(){

@@ -13,14 +13,22 @@ public class EnemyController : MonoBehaviour {
 	private bool death;
 	//親オブジェクト
 	private GameObject parent;
+
 	private GameObject player;
 	private GameObject gm;
+
+	private AudioSource sound;
+
 	// Use this for initialization
 	void Start () {
 		parent = transform.root.gameObject;
 		if(SceneManager.GetActiveScene().name == "MHAMain" || SceneManager.GetActiveScene().name == "MHAMain2"){
 			player = GameObject.FindWithTag ("Player2");
 		}
+
+		AudioSource audioSource = GetComponent<AudioSource> ();
+		sound = audioSource;
+
 		anim = GetComponent<Animation_Test> ();
 		idle = true;
 		attack = false;
@@ -64,6 +72,7 @@ public class EnemyController : MonoBehaviour {
 		if(collision.gameObject.tag == "Bullet"){
 			idle = false;
 			death = true;
+			sound.PlayOneShot (sound.clip);
 			Invoke ("DestroyEnemy",1f);
 		}
 	}

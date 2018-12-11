@@ -10,11 +10,19 @@ public class GoalController : NetworkBehaviour {
 	[SerializeField] bool isplayer2;
 	int colorvalue;
 	[SerializeField] GameObject goaltext;
+	[SerializeField] GameObject[] childObject;
+
 	void Start(){
 		if(SceneManager.GetActiveScene().name == "MHAMain" && gameObject.tag == "Goal2"){
 			gameObject.GetComponent<BoxCollider> ().enabled = false;
+			childObject [0].SetActive (false);
+			childObject [1].SetActive (false);
+			childObject [2].SetActive (false);
 		}else if(SceneManager.GetActiveScene().name == "MHAMain2" && gameObject.tag == "Goal"){
 			gameObject.GetComponent<BoxCollider> ().enabled = false;
+			childObject [0].SetActive (false);
+			childObject [1].SetActive (false);
+			childObject [2].SetActive (false);
 		}
 		//DontDestroyOnLoad (gameObject);
 		colorvalue = 0;

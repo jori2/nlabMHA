@@ -1,6 +1,7 @@
 using UnityEngine;
 using UnityEngine.UI;
 using System.Collections;
+using UnityEngine.SceneManagement;
 
 public class DisplayData : MonoBehaviour {
 	
@@ -15,6 +16,8 @@ public class DisplayData : MonoBehaviour {
 	GameObject Gattention;
 	GameObject Gmeditation;
 	GameObject Gdelta;
+
+	GameObject player;
 
 	private int Raw = 0;
 	private int PoorSignal = 200;
@@ -215,15 +218,27 @@ public class DisplayData : MonoBehaviour {
 
 		#endif
 
-		if(Gattention == null || Gmeditation == null || Gdelta == null){
-			Gattention = GameObject.Find ("Attention");
-			Gmeditation = GameObject.Find ("Meditation");
-			Gdelta = GameObject.Find ("Delta");
-		}else if(Gattention != null && Gmeditation != null && Gdelta != null){
+		if(Gattention == null){
+			if (SceneManager.GetActiveScene ().name == "MHAMain") {
+				Gattention = GameObject.FindWithTag ("Att1");
+			} else if (SceneManager.GetActiveScene ().name == "MHAMain2") {
+				Gattention = GameObject.FindWithTag ("Att2");
+			} else {
+				Gattention = GameObject.Find ("Attention");
+			}
+		}else if(Gattention != null){
 			Gattention.GetComponent<Text> ().text = "Attention =" + Attention;
-			Gmeditation.GetComponent<Text> ().text = "Meditation =" + Meditation;
-			Gdelta.GetComponent<Text> ().text = "Delta =" + Delta;
 		}
+
+//		if(Gattention == null || Gmeditation == null || Gdelta == null){
+//			Gattention = GameObject.Find ("Attention");
+//			Gmeditation = GameObject.Find ("Meditation");
+//			Gdelta = GameObject.Find ("Delta");
+//		}else if(Gattention != null && Gmeditation != null && Gdelta != null){
+//			Gattention.GetComponent<Text> ().text = "Attention =" + Attention;
+//			Gmeditation.GetComponent<Text> ().text = "Meditation =" + Meditation;
+//			Gdelta.GetComponent<Text> ().text = "Delta =" + Delta;
+//		}
 	}
 	
 	/**

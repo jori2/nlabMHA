@@ -11,28 +11,32 @@ public class PlayerShoot : NetworkBehaviour {
 	//脳波計
 	private int currentAtt;
 
+	AudioSource sound;
+
 	void Start (){
 		bulletSpawn = GameObject.FindWithTag ("ControllerVisual").transform;
+		AudioSource[] audioSource = GetComponents<AudioSource> ();
+		sound = audioSource [2];
 	}
 
 	void Update(){
-		//脳波計
-		currentAtt = DisplayData.Attention;
-		if (isLocalPlayer == false || OfflineSceneManager.scenename != "MHAMain2") {
+		if (isLocalPlayer == false) {
 			return;
 		}
-		//脳波計
-		if(currentAtt >= 60){
+
 			if(GvrController.ClickButtonDown == true){
-				Fire ();
+				float EP = GetComponent<PlayerController> ().energyPoint;
+				if(EP >= 80){
+					Fire ();
+				}
 			}
-		}
 	}
 
 
 	void Fire(){
+		sound.PlayOneShot (sound.clip);
 		var bullet = (GameObject)Instantiate (bulletPrefab,bulletSpawn.position,bulletSpawn.rotation);
 		bullet.GetComponent<Rigidbody>().velocity = bullet.transform.forward * 6;
-		Destroy(bullet, 2.0f);
+		Destroy(bullet, 3.0f);
 	}
 }

@@ -11,6 +11,12 @@ public class PlayerController : NetworkBehaviour {
 	[SerializeField] bool isplayer2;
 	[SerializeField] GameObject phychicEffect;
 	private int currentAtt;
+	public float energyPoint;
+	private AudioSource sound1;
+	private AudioSource sound2;
+	private bool isplaysound;
+//	private bool isplaysound2;
+
 		
 	void Start(){
 		if (!isLocalPlayer) {
@@ -18,6 +24,10 @@ public class PlayerController : NetworkBehaviour {
 		}
 		CmdSpawnGoal ();
 		CmdSpawnGameManager ();
+		AudioSource[] audioSource = GetComponents<AudioSource> ();
+		sound1 = audioSource [0];
+		sound2 = audioSource [1];
+		energyPoint = 0;
 		//effectの初期化
 		//phychicEffect.gameObject.SetActive (false);
 		phychicEffect.gameObject.transform.localScale = new Vector3 (0.5f,0.5f,0.5f);
@@ -60,14 +70,64 @@ public class PlayerController : NetworkBehaviour {
 				gameObject.SetActive (true);
 			}
 		}
-		//集中度によってリモコンにエフェクトを発生
+
+		//集中度による制御
 		currentAtt = DisplayData.Attention;
-		if (currentAtt >= 60) {
+		if (energyPoint >= 80 && currentAtt >= 60) {
+
+			//SEの制御
+
+			if (sound2.isPlaying == false) {
+				sound2.Play ();
+			}
+
+			if (sound1.isPlaying == true) {
+				sound1.Stop ();
+			}
+
+			//EPの制御
+			energyPoint += 1f;
+
+			if(energyPoint >= 100){
+				energyPoint = 100;
+			}
+
+			//particleの制御
 			phychicEffect.gameObject.SetActive (false);
 			phychicEffect.gameObject.SetActive (true);
-			phychicEffect.gameObject.transform.localScale = new Vector3 (1f,1f,1f);
-		} else {
+			phychicEffect.gameObject.transform.localScale = new Vector3 (2f,2f,2f);
+
+		} else if(energyPoint < 80 && currentAtt >= 60) {
+
+			if (sound2.isPlaying == true) {
+				sound2.Stop ();
+			}
+
+			if (sound1.isPlaying == false) {
+				sound1.Play ();
+			}
+
+			energyPoint += 1f;
+
+//			if(energyPoint < 0){
+//				energyPoint = 0;
+//			}else if(energyPoint >= 0){
+//				energyPoint -= 0.05f;
+//			}
 			//phychicEffect.gameObject.SetActive (false);
+			phychicEffect.gameObject.transform.localScale = new Vector3 (1f,1f,1f);
+		}else if(currentAtt < 60){
+			
+			if (sound2.isPlaying == true) {
+				sound2.Stop ();
+			}
+
+			if (sound1.isPlaying == true) {
+				sound1.Stop ();
+			}
+
+			energyPoint -= 0.05f;
+
 			phychicEffect.gameObject.transform.localScale = new Vector3 (0.5f,0.5f,0.5f);
 		}
 	}

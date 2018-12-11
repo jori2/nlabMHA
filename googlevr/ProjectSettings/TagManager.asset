@@ -19,6 +19,8 @@ TagManager:
   - Goal2
   - GM2
   - GoalText2
+  - Att1
+  - Att2
   layers:
   - Default
   - TransparentFX

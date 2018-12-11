@@ -8,7 +8,7 @@ using UnityEngine.SceneManagement;
 public class CreateCloud : NetworkBehaviour {
 	public GameObject mutualobject;
 	public GameObject cloudinstance;
-	//private GameObject player;
+	private GameObject player;
 	NetworkConnection conn;
 	Vector3 worldPos;
 	//脳波計
@@ -30,16 +30,14 @@ public class CreateCloud : NetworkBehaviour {
 //		if(!isLocalPlayer){
 //			return;
 //		}
-		//脳波計
-		currentAtt = DisplayData.Attention;
-		if(currentAtt >= 60){
+		player = GameObject.FindWithTag("Player");
+		float EP = player.GetComponent<PlayerController> ().energyPoint;
+		if(EP>=80){
 			PointerEventData pointerData = data as PointerEventData;
 			worldPos = pointerData.pointerCurrentRaycast.worldPosition;
 			Debug.Log (worldPos);
 			//player.GetComponent<PlayerController>().CallSpawnMethod (cloudinstance);
 			CmdInstanceCloud(worldPos);
-		}else{
-			
 		}
 	}
 

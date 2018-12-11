@@ -349,7 +349,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &55065475
 RectTransform:
   m_ObjectHideFlags: 0
@@ -602,7 +602,7 @@ MonoBehaviour:
   m_NetworkPort: 7777
   m_ServerBindToIP: 0
   m_ServerBindAddress: 
-  m_NetworkAddress: 192.168.100.152
+  m_NetworkAddress: localhost
   m_DontDestroyOnLoad: 1
   m_RunInBackground: 1
   m_ScriptCRCCheck: 1
@@ -1274,7 +1274,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1033178965
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2761,13 +2761,13 @@ LineRenderer:
       m_Curve:
       - serializedVersion: 2
         time: 0
-        value: 0.5744705
-        inSlope: 0
-        outSlope: 0
+        value: 0.14894104
+        inSlope: -0.05008108
+        outSlope: -0.05008108
         tangentMode: 0
       - serializedVersion: 2
-        time: 1
-        value: 0.5744705
+        time: 0.9740906
+        value: 0.14894104
         inSlope: 0
         outSlope: 0
         tangentMode: 0
@@ -2826,7 +2826,7 @@ MonoBehaviour:
   controller: {fileID: 1517294768}
   laserColor: {r: 1, g: 1, b: 1, a: 0.25}
   laserColorEnd: {r: 1, g: 1, b: 1, a: 0}
-  maxLaserDistance: 1
+  maxLaserDistance: 20
   lerpSpeed: 20
   lerpThreshold: 1
   shrinkLaser: 1
