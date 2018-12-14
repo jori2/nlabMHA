@@ -12,11 +12,10 @@ public class PlayerController : NetworkBehaviour {
 	[SerializeField] GameObject phychicEffect;
 	private int currentAtt;
 	public float energyPoint;
+	public bool isCharge;
 	private AudioSource sound1;
 	private AudioSource sound2;
-	private bool isplaysound;
-//	private bool isplaysound2;
-
+	ParticleSystem.MainModule par;
 		
 	void Start(){
 		if (!isLocalPlayer) {
@@ -30,6 +29,7 @@ public class PlayerController : NetworkBehaviour {
 		energyPoint = 0;
 		//effectの初期化
 		//phychicEffect.gameObject.SetActive (false);
+		par = phychicEffect.GetComponent<ParticleSystem> ().main;
 		phychicEffect.gameObject.transform.localScale = new Vector3 (0.5f,0.5f,0.5f);
 	}
 		
@@ -73,7 +73,7 @@ public class PlayerController : NetworkBehaviour {
 
 		//集中度による制御
 		currentAtt = DisplayData.Attention;
-		if (energyPoint >= 80 && currentAtt >= 60) {
+		if (energyPoint >= 60 && currentAtt >= 60) {
 
 			//SEの制御
 
@@ -92,12 +92,16 @@ public class PlayerController : NetworkBehaviour {
 				energyPoint = 100;
 			}
 
+			//ストック
+			isCharge = true;
+
 			//particleの制御
 			phychicEffect.gameObject.SetActive (false);
+			par.startColor = Color.red;
 			phychicEffect.gameObject.SetActive (true);
 			phychicEffect.gameObject.transform.localScale = new Vector3 (2f,2f,2f);
 
-		} else if(energyPoint < 80 && currentAtt >= 60) {
+		} else if(energyPoint < 60 && currentAtt >= 60) {
 
 			if (sound2.isPlaying == true) {
 				sound2.Stop ();
@@ -115,6 +119,7 @@ public class PlayerController : NetworkBehaviour {
 //				energyPoint -= 0.05f;
 //			}
 			//phychicEffect.gameObject.SetActive (false);
+			par.startColor = Color.yellow;
 			phychicEffect.gameObject.transform.localScale = new Vector3 (1f,1f,1f);
 		}else if(currentAtt < 60){
 			
@@ -127,7 +132,7 @@ public class PlayerController : NetworkBehaviour {
 			}
 
 			energyPoint -= 0.05f;
-
+			par.startColor = Color.blue;
 			phychicEffect.gameObject.transform.localScale = new Vector3 (0.5f,0.5f,0.5f);
 		}
 	}

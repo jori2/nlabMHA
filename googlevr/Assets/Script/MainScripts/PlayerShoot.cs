@@ -25,9 +25,10 @@ public class PlayerShoot : NetworkBehaviour {
 		}
 
 			if(GvrController.ClickButtonDown == true){
-				float EP = GetComponent<PlayerController> ().energyPoint;
-				if(EP >= 80){
+				bool Charge = GetComponent<PlayerController> ().isCharge;
+				if(Charge == true){
 					Fire ();
+					Charge = false;
 				}
 			}
 	}

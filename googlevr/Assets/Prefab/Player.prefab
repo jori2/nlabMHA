@@ -1313,7 +1313,7 @@ MonoBehaviour:
   raycasterEventMask:
     serializedVersion: 2
     m_Bits: 4294967295
-  maxRaycastHits: 1
+  maxRaycastHits: 2
 --- !u!114 &114783250843912344
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1549,7 +1549,7 @@ ParticleSystem:
   moveWithTransform: 0
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 2
-  randomSeed: -181903345
+  randomSeed: 6231677
   InitialModule:
     serializedVersion: 3
     enabled: 1
@@ -4913,7 +4913,7 @@ ParticleSystem:
   moveWithTransform: 0
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 0
-  randomSeed: 540652856
+  randomSeed: -9607896
   InitialModule:
     serializedVersion: 3
     enabled: 1
@@ -8289,7 +8289,7 @@ ParticleSystem:
   moveWithTransform: 0
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 2
-  randomSeed: 754988437
+  randomSeed: 1620179999
   InitialModule:
     serializedVersion: 3
     enabled: 1
@@ -11653,7 +11653,7 @@ ParticleSystem:
   moveWithTransform: 0
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 2
-  randomSeed: 1917886626
+  randomSeed: -1883072143
   InitialModule:
     serializedVersion: 3
     enabled: 1
@@ -14978,7 +14978,7 @@ ParticleSystem:
   moveWithTransform: 1
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 2
-  randomSeed: -559134079
+  randomSeed: 454228766
   InitialModule:
     serializedVersion: 3
     enabled: 1
