@@ -23,6 +23,7 @@ TagManager:
   - Att2
   - Delta1
   - Delta2
+  - DD
   layers:
   - Default
   - TransparentFX

@@ -214,6 +214,7 @@ GameObject:
   - component: {fileID: 224018104416523288}
   - component: {fileID: 222495200738237150}
   - component: {fileID: 114516760801945702}
+  - component: {fileID: 114561134546746182}
   m_Layer: 11
   m_Name: Attention
   m_TagString: Att1
@@ -322,6 +323,7 @@ GameObject:
   - component: {fileID: 224698057559028068}
   - component: {fileID: 222847238618759320}
   - component: {fileID: 114354509451768620}
+  - component: {fileID: 114039798810391606}
   m_Layer: 11
   m_Name: Delta
   m_TagString: Delta1
@@ -984,6 +986,17 @@ MonoBehaviour:
   shrunkScale: 0.2
   beginShrinkAngleDegrees: 0
   endShrinkAngleDegrees: 2
+--- !u!114 &114039798810391606
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1930693273084018}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1ce987a9c88874fcda3e6077f3b4369e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114077514638522350
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1072,7 +1085,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
-  m_RaycastTarget: 1
+  m_RaycastTarget: 0
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -1229,6 +1242,17 @@ MonoBehaviour:
     m_VerticalOverflow: 0
     m_LineSpacing: 1
   m_Text: New Text
+--- !u!114 &114561134546746182
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1602461690171448}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1ce987a9c88874fcda3e6077f3b4369e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114624195020509382
 MonoBehaviour:
   m_ObjectHideFlags: 1
