@@ -21,6 +21,8 @@ TagManager:
   - GoalText2
   - Att1
   - Att2
+  - Delta1
+  - Delta2
   layers:
   - Default
   - TransparentFX

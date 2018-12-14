@@ -10,7 +10,7 @@ public class Health : NetworkBehaviour {
 	bool isGameOver;
 	private GameObject gm;
 	private AudioSource sound;
-	private GameObject mainCamera;
+	public GameObject mainCamera;
 //	[SerializeField] GameObject[] blood;
 
 	// Use this for initialization

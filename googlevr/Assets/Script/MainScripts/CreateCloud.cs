@@ -31,14 +31,13 @@ public class CreateCloud : NetworkBehaviour {
 //			return;
 //		}
 		player = GameObject.FindWithTag("Player");
-		bool Charge = player.GetComponent<PlayerController> ().isCharge;
-		if(Charge == true){
+		if(player.GetComponent<PlayerController> ().isCharge == true){
 			PointerEventData pointerData = data as PointerEventData;
 			worldPos = pointerData.pointerCurrentRaycast.worldPosition;
 			Debug.Log (worldPos);
 			//player.GetComponent<PlayerController>().CallSpawnMethod (cloudinstance);
 			CmdInstanceCloud(worldPos);
-			Charge = false;
+			player.GetComponent<PlayerController> ().isCharge = false;
 		}
 	}
 

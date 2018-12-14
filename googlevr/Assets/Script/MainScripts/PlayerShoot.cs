@@ -16,7 +16,7 @@ public class PlayerShoot : NetworkBehaviour {
 	void Start (){
 		bulletSpawn = GameObject.FindWithTag ("ControllerVisual").transform;
 		AudioSource[] audioSource = GetComponents<AudioSource> ();
-		sound = audioSource [2];
+		sound = audioSource [3];
 	}
 
 	void Update(){
@@ -24,13 +24,12 @@ public class PlayerShoot : NetworkBehaviour {
 			return;
 		}
 
-			if(GvrController.ClickButtonDown == true){
-				bool Charge = GetComponent<PlayerController> ().isCharge;
-				if(Charge == true){
-					Fire ();
-					Charge = false;
-				}
+		if(GvrController.ClickButtonDown == true){
+			if(GetComponent<PlayerController> ().isCharge == true){
+				Fire ();
+				GetComponent<PlayerController> ().isCharge = false;
 			}
+		}
 	}
 
 

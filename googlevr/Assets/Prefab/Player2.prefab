@@ -45,6 +45,7 @@ GameObject:
   - component: {fileID: 82544320683352398}
   - component: {fileID: 82841947990232948}
   - component: {fileID: 82953408001921470}
+  - component: {fileID: 82669789150423756}
   m_Layer: 0
   m_Name: Player2
   m_TagString: Player2
@@ -462,11 +463,11 @@ GameObject:
   - component: {fileID: 114157617980446206}
   m_Layer: 11
   m_Name: Delta
-  m_TagString: Untagged
+  m_TagString: Delta2
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!1 &1752604491400642
 GameObject:
   m_ObjectHideFlags: 1
@@ -933,9 +934,89 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 7971dc698806848d2a53bd21dd079827, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 1
+  m_Volume: 0.5
   m_Pitch: 1
   Loop: 1
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    - serializedVersion: 2
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
+--- !u!82 &82669789150423756
+AudioSource:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1102879903526710}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: bcfa1cc44d6924bb7a17c4481b66a4e0, type: 3}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
@@ -1013,7 +1094,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 65fbac1d5d7bc4300bff479d945f104b, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 1
+  m_Volume: 0.5
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -1091,9 +1172,9 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: bcfa1cc44d6924bb7a17c4481b66a4e0, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 277eb2eae52eb4f87bb05078ce3442f8, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 1
+  m_Volume: 0.5
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -1209,6 +1290,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fa471bb49b44947e8bdd8c4924c7fc50, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  mainCamera: {fileID: 0}
 --- !u!114 &114152775763806632
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1321,7 +1403,7 @@ MonoBehaviour:
   raycasterEventMask:
     serializedVersion: 2
     m_Bits: 4294967295
-  maxRaycastHits: 1
+  maxRaycastHits: 5
 --- !u!114 &114254203671802046
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1408,6 +1490,7 @@ MonoBehaviour:
   isplayer2: 1
   phychicEffect: {fileID: 1423120418144716}
   energyPoint: 0
+  isCharge: 0
 --- !u!114 &114328079193381496
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1512,7 +1595,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d51399b1db66f4299b3831632fe1f737, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  setShakeTIme: 0.8
+  setShakeTIme: 0.1
 --- !u!114 &114498239873752266
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1645,7 +1728,7 @@ MonoBehaviour:
   controller: {fileID: 4432780459636308}
   laserColor: {r: 1, g: 1, b: 1, a: 0.25}
   laserColorEnd: {r: 1, g: 1, b: 1, a: 0}
-  maxLaserDistance: 1
+  maxLaserDistance: 5
   lerpSpeed: 20
   lerpThreshold: 1
   shrinkLaser: 1

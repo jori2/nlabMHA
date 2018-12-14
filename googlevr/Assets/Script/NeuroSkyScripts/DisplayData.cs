@@ -221,13 +221,17 @@ public class DisplayData : MonoBehaviour {
 		if(Gattention == null){
 			if (SceneManager.GetActiveScene ().name == "MHAMain") {
 				Gattention = GameObject.FindWithTag ("Att1");
+				Gdelta= GameObject.FindWithTag ("Delta1");
 			} else if (SceneManager.GetActiveScene ().name == "MHAMain2") {
 				Gattention = GameObject.FindWithTag ("Att2");
+				Gdelta= GameObject.FindWithTag ("Delta2");
 			} else {
 				Gattention = GameObject.Find ("Attention");
+				Gdelta= GameObject.Find ("Delta");
 			}
 		}else if(Gattention != null){
 			Gattention.GetComponent<Text> ().text = "Attention =" + Attention;
+			Gdelta.GetComponent<Text> ().text = "Delta =" + Delta;
 		}
 
 //		if(Gattention == null || Gmeditation == null || Gdelta == null){
