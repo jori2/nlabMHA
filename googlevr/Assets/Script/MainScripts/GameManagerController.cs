@@ -7,10 +7,6 @@ using UnityEngine.SceneManagement;
 public class GameManagerController : NetworkBehaviour {
 	[SerializeField] GameObject goaltext;
 	private GameObject gm1;
-	// Use this for initialization
-	void Start () {
-		
-	}
 
 	//CmdDestroyMutualObjを呼ぶ
 	public void CallDestroyMethod(GameObject enemy){

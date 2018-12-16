@@ -8,26 +8,25 @@ public class PlayerShoot : NetworkBehaviour {
 
 	public GameObject bulletPrefab;
 	private Transform bulletSpawn;
-	//脳波計
-	private int currentAtt;
-
 	AudioSource sound;
+	PlayerController pc;
 
 	void Start (){
 		bulletSpawn = GameObject.FindWithTag ("ControllerVisual").transform;
 		AudioSource[] audioSource = GetComponents<AudioSource> ();
 		sound = audioSource [3];
+		pc = GetComponent<PlayerController> ();
 	}
 
 	void Update(){
 		if (isLocalPlayer == false) {
 			return;
 		}
-
 		if(GvrController.ClickButtonDown == true){
-			if(GetComponent<PlayerController> ().isCharge == true){
+			bool isCharge = pc.SetCharge ();
+			if(isCharge == true){
 				Fire ();
-				GetComponent<PlayerController> ().isCharge = false;
+				pc.GetCharge (false);
 			}
 		}
 	}

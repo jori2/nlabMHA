@@ -19,10 +19,6 @@ TagManager:
   - Goal2
   - GM2
   - GoalText2
-  - Att1
-  - Att2
-  - Delta1
-  - Delta2
   - DD
   layers:
   - Default
@@ -38,10 +34,10 @@ TagManager:
   - Mountain
   - TextLayer
   - DimensionWindow
-  - 
-  - 
-  - 
-  - 
+  - Button
+  - Cloud
+  - Plane
+  - Timber
   - 
   - 
   - 

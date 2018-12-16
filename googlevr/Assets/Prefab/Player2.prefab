@@ -1251,7 +1251,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   raycasterEventMask:
     serializedVersion: 2
-    m_Bits: 4294967295
+    m_Bits: 65536
   maxRaycastHits: 5
 --- !u!114 &114254203671802046
 MonoBehaviour:

@@ -13,6 +13,7 @@ public class PlayerController : NetworkBehaviour {
 	private int currentAtt;
 	public float energyPoint;
 	public bool isCharge;
+	private int effValue;
 	private AudioSource sound1;
 	private AudioSource sound2;
 	ParticleSystem.MainModule par;
@@ -27,6 +28,7 @@ public class PlayerController : NetworkBehaviour {
 		sound1 = audioSource [0];
 		sound2 = audioSource [1];
 		energyPoint = 0;
+		effValue = 0;
 		//effectの初期化
 		//phychicEffect.gameObject.SetActive (false);
 		par = phychicEffect.GetComponent<ParticleSystem> ().main;
@@ -96,10 +98,13 @@ public class PlayerController : NetworkBehaviour {
 			isCharge = true;
 
 			//particleの制御
-			phychicEffect.gameObject.SetActive (false);
-			par.startColor = Color.red;
-			phychicEffect.gameObject.SetActive (true);
-			phychicEffect.gameObject.transform.localScale = new Vector3 (2f,2f,2f);
+			if(effValue == 0 || effValue == 1){
+				phychicEffect.gameObject.SetActive (false);
+				par.startColor = Color.red;
+				phychicEffect.gameObject.SetActive (true);
+				phychicEffect.gameObject.transform.localScale = new Vector3 (2f,2f,2f);
+				effValue = 2;
+			}
 
 		} else if(energyPoint < 60 && currentAtt >= 60) {
 
@@ -119,10 +124,14 @@ public class PlayerController : NetworkBehaviour {
 //				energyPoint -= 0.05f;
 //			}
 			//phychicEffect.gameObject.SetActive (false);
-			par.startColor = Color.yellow;
-			phychicEffect.gameObject.transform.localScale = new Vector3 (1f,1f,1f);
+			if(effValue == 0 || effValue == 2){
+				par.startColor = Color.yellow;
+				phychicEffect.gameObject.transform.localScale = new Vector3 (1f,1f,1f);
+				effValue = 1;
+			}
 		}else if(currentAtt < 60){
 			
+
 			if (sound2.isPlaying == true) {
 				sound2.Stop ();
 			}
@@ -132,8 +141,20 @@ public class PlayerController : NetworkBehaviour {
 			}
 
 			energyPoint -= 0.05f;
-			par.startColor = Color.blue;
-			phychicEffect.gameObject.transform.localScale = new Vector3 (0.5f,0.5f,0.5f);
+
+			if(effValue == 1 || effValue == 2){
+				par.startColor = Color.blue;
+				phychicEffect.gameObject.transform.localScale = new Vector3 (0.5f,0.5f,0.5f);
+				effValue = 0;
+			}
 		}
+	}
+
+	public bool SetCharge(){
+		return isCharge;
+	}
+
+	public void GetCharge(bool gcharge){
+		isCharge = gcharge;
 	}
 }

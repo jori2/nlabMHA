@@ -156,7 +156,7 @@ GameObject:
   - component: {fileID: 82016205361186392}
   - component: {fileID: 33812064689864060}
   - component: {fileID: 23286156703417998}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: S_Cloud_VarC
   m_TagString: Cloud
   m_Icon: {fileID: 0}
