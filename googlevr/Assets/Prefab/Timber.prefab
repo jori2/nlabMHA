@@ -25,6 +25,7 @@ GameObject:
   - component: {fileID: 114297070727341394}
   - component: {fileID: 65456756026633260}
   - component: {fileID: 82007735306885610}
+  - component: {fileID: 114583401847158478}
   m_Layer: 16
   m_Name: Timber
   m_TagString: Untagged
@@ -39,8 +40,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1013393940983930}
   m_LocalRotation: {x: -0, y: -0, z: -0.7071068, w: 0.7071068}
-  m_LocalPosition: {x: 0, y: 5.2, z: -12.03}
-  m_LocalScale: {x: 10, y: 10, z: 4}
+  m_LocalPosition: {x: -20.5, y: 5.2, z: 8.1}
+  m_LocalScale: {x: 10.000073, y: 10.000073, z: 4}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -216,6 +217,30 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
+        - m_Target: {fileID: 114583401847158478}
+          m_MethodName: OnClickedIntoChild
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
       m_TypeName: UnityEngine.EventSystems.EventTrigger+TriggerEvent, UnityEngine.UI,
         Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   delegates: []
+--- !u!114 &114583401847158478
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1013393940983930}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d06b789f20a7a403c86af665a9baf3bc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isFlow: 0
+  isSelect: 0

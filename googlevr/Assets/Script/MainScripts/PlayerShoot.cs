@@ -13,8 +13,8 @@ public class PlayerShoot : NetworkBehaviour {
 
 	void Start (){
 		bulletSpawn = GameObject.FindWithTag ("ControllerVisual").transform;
-		AudioSource[] audioSource = GetComponents<AudioSource> ();
-		sound = audioSource [3];
+//		AudioSource[] audioSource = GetComponents<AudioSource> ();
+//		sound = audioSource [3];
 		pc = GetComponent<PlayerController> ();
 	}
 
@@ -33,9 +33,9 @@ public class PlayerShoot : NetworkBehaviour {
 
 
 	void Fire(){
-		sound.PlayOneShot (sound.clip);
+//		sound.PlayOneShot (sound.clip);
 		var bullet = (GameObject)Instantiate (bulletPrefab,bulletSpawn.position,bulletSpawn.rotation);
-		bullet.GetComponent<Rigidbody>().velocity = bullet.transform.forward * 6;
+		bullet.GetComponent<Rigidbody>().velocity = bullet.transform.forward * 20;
 		Destroy(bullet, 3.0f);
 	}
 }

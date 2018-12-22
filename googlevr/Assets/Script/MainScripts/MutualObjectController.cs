@@ -22,4 +22,8 @@ public class MutualObjectController : MonoBehaviour {
 		}
 	}
 
+	//外部のスクリプトからisPlayerを変更する
+	public void SetIsPlayer(bool setisPlayer){
+		isPlayer = setisPlayer;
+	}
 }

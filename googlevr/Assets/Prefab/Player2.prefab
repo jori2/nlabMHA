@@ -29,7 +29,8 @@ GameObject:
   - component: {fileID: 82841947990232948}
   - component: {fileID: 82953408001921470}
   - component: {fileID: 82669789150423756}
-  m_Layer: 0
+  - component: {fileID: 114348324100045202}
+  m_Layer: 17
   m_Name: Player2
   m_TagString: Player2
   m_Icon: {fileID: 0}
@@ -274,7 +275,6 @@ GameObject:
   - component: {fileID: 81157596851978516}
   - component: {fileID: 114203572920464746}
   - component: {fileID: 114275921063067682}
-  - component: {fileID: 114455932383556900}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -763,8 +763,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.3, y: 1, z: 0.3}
-  m_Center: {x: 0, y: 0, z: -0.4}
+  m_Size: {x: 1, y: 3, z: 0.3}
+  m_Center: {x: 0, y: 1, z: -0.4}
 --- !u!81 &81157596851978516
 AudioListener:
   m_ObjectHideFlags: 1
@@ -1139,7 +1139,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fa471bb49b44947e8bdd8c4924c7fc50, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mainCamera: {fileID: 0}
 --- !u!114 &114152775763806632
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1352,12 +1351,12 @@ MonoBehaviour:
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
   m_DynamicPixelsPerUnit: 1
---- !u!114 &114455932383556900
+--- !u!114 &114348324100045202
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1647672764867282}
+  m_GameObject: {fileID: 1102879903526710}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d51399b1db66f4299b3831632fe1f737, type: 3}
@@ -1375,6 +1374,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1ce987a9c88874fcda3e6077f3b4369e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  DD: {fileID: 0}
+  gm: 
+  mtext: {fileID: 0}
 --- !u!114 &114498239873752266
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1453,7 +1455,7 @@ MonoBehaviour:
   controller: {fileID: 4432780459636308}
   laserColor: {r: 1, g: 1, b: 1, a: 0.25}
   laserColorEnd: {r: 1, g: 1, b: 1, a: 0}
-  maxLaserDistance: 5
+  maxLaserDistance: 6
   lerpSpeed: 20
   lerpThreshold: 1
   shrinkLaser: 1
@@ -1588,6 +1590,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1ce987a9c88874fcda3e6077f3b4369e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  DD: {fileID: 0}
+  gm: 
+  mtext: {fileID: 0}
 --- !u!120 &120168136717305558
 LineRenderer:
   m_ObjectHideFlags: 1

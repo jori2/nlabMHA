@@ -17,7 +17,8 @@ public class PlayerController : NetworkBehaviour {
 	private AudioSource sound1;
 	private AudioSource sound2;
 	ParticleSystem.MainModule par;
-		
+	private Vector3 ppos;
+
 	void Start(){
 		if (!isLocalPlayer) {
 			return;
@@ -32,6 +33,7 @@ public class PlayerController : NetworkBehaviour {
 		//effectの初期化
 		//phychicEffect.gameObject.SetActive (false);
 		par = phychicEffect.GetComponent<ParticleSystem> ().main;
+		par.startColor = Color.blue;
 		phychicEffect.gameObject.transform.localScale = new Vector3 (0.5f,0.5f,0.5f);
 	}
 		
@@ -99,9 +101,9 @@ public class PlayerController : NetworkBehaviour {
 
 			//particleの制御
 			if(effValue == 0 || effValue == 1){
-				phychicEffect.gameObject.SetActive (false);
+//				phychicEffect.gameObject.SetActive (false);
 				par.startColor = Color.red;
-				phychicEffect.gameObject.SetActive (true);
+//				phychicEffect.gameObject.SetActive (true);
 				phychicEffect.gameObject.transform.localScale = new Vector3 (2f,2f,2f);
 				effValue = 2;
 			}
@@ -156,5 +158,9 @@ public class PlayerController : NetworkBehaviour {
 
 	public void GetCharge(bool gcharge){
 		isCharge = gcharge;
+	}
+
+	public void GameOver(){
+		gameObject.transform.position = ppos;
 	}
 }

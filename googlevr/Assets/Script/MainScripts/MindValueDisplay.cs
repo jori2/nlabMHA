@@ -4,9 +4,9 @@ using UnityEngine;
 using UnityEngine.UI;
 
 public class MindValueDisplay : MonoBehaviour {
-	private DisplayData DD;
-	private string gm;
-	private Text mtext;
+	[SerializeField] DisplayData DD;
+	[SerializeField] string gm;
+	[SerializeField] Text mtext;
 	// Use this for initialization
 	void Start () {
 		DD = GameObject.FindGameObjectWithTag ("DD").GetComponent<DisplayData>();

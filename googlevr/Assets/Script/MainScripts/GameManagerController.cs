@@ -7,7 +7,7 @@ using UnityEngine.SceneManagement;
 public class GameManagerController : NetworkBehaviour {
 	[SerializeField] GameObject goaltext;
 	private GameObject gm1;
-
+	public GameObject selectObject;
 	//CmdDestroyMutualObjを呼ぶ
 	public void CallDestroyMethod(GameObject enemy){
 //		if(!isLocalPlayer){
@@ -18,7 +18,11 @@ public class GameManagerController : NetworkBehaviour {
 
 	//CmdP1GameOverMessageを呼ぶ
 	public void CallP1GameOverMessage(){
-		CmdP1GameOverMessage ();
+//		CmdP1GameOverMessage ();
+
+
+		//プレイヤーを元の位置に戻す
+		GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerController>().GameOver();
 	}
 
 	//CmdDestroyMutualObjMessageを実行
@@ -114,5 +118,8 @@ public class GameManagerController : NetworkBehaviour {
 		goaltext.GetComponent<GoalTextController> ().SetPlayerNumber (4);
 	}
 
-
+	//現在選択されているMOJは何か
+	public void GetSelectObject(GameObject SObject){
+		selectObject = SObject;
+	}
 }

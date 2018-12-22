@@ -20,6 +20,10 @@ TagManager:
   - GM2
   - GoalText2
   - DD
+  - Att1
+  - Delta1
+  - Att2
+  - Delta2
   layers:
   - Default
   - TransparentFX
@@ -38,8 +42,8 @@ TagManager:
   - Cloud
   - Plane
   - Timber
-  - 
-  - 
+  - PlayerLayer
+  - Bullet
   - 
   - 
   - 

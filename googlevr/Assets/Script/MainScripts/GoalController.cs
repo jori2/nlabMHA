@@ -66,7 +66,6 @@ public class GoalController : NetworkBehaviour {
 	void GoalDoor(int colorval){
 		Isgoal = true;
 		if(colorval == 1){
-			GetComponent<Renderer> ().material.color = Color.red;
 			//ゴールテキストの検索
 			if(SceneManager.GetActiveScene().name == "MHAMain"){
 				goaltext = GameObject.FindWithTag ("GoalText");
@@ -75,7 +74,6 @@ public class GoalController : NetworkBehaviour {
 			}
 			goaltext.GetComponent<GoalTextController> ().SetPlayerNumber (1);
 		}else if(colorval == 2){
-			GetComponent<Renderer> ().material.color = Color.blue;
 			//ゴールテキストの検索
 			if(SceneManager.GetActiveScene().name == "MHAMain"){
 				goaltext = GameObject.FindWithTag ("GoalText");
