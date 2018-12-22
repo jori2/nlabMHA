@@ -17,7 +17,7 @@ public class PlayerController : NetworkBehaviour {
 	private AudioSource sound1;
 	private AudioSource sound2;
 	ParticleSystem.MainModule par;
-	private Vector3 ppos;
+	int delayframe;
 
 	void Start(){
 		if (!isLocalPlayer) {
@@ -35,6 +35,7 @@ public class PlayerController : NetworkBehaviour {
 		par = phychicEffect.GetComponent<ParticleSystem> ().main;
 		par.startColor = Color.blue;
 		phychicEffect.gameObject.transform.localScale = new Vector3 (0.5f,0.5f,0.5f);
+		delayframe = 0;
 	}
 		
 	//ゴールを生成
@@ -77,9 +78,18 @@ public class PlayerController : NetworkBehaviour {
 
 		//集中度による制御
 		currentAtt = DisplayData.Attention;
+
+		if(delayframe <= 10){
+			delayframe++;
+			return;
+		}
+
 		if (energyPoint >= 60 && currentAtt >= 60) {
 
 			//SEの制御
+
+//			sound2.Play ();
+//			sound1.Stop ();
 
 			if (sound2.isPlaying == false) {
 				sound2.Play ();
@@ -110,6 +120,9 @@ public class PlayerController : NetworkBehaviour {
 
 		} else if(energyPoint < 60 && currentAtt >= 60) {
 
+//			sound2.Stop ();
+//			sound1.Play ();
+
 			if (sound2.isPlaying == true) {
 				sound2.Stop ();
 			}
@@ -133,6 +146,8 @@ public class PlayerController : NetworkBehaviour {
 			}
 		}else if(currentAtt < 60){
 			
+//			sound2.Stop ();
+//			sound1.Stop ();
 
 			if (sound2.isPlaying == true) {
 				sound2.Stop ();
@@ -161,6 +176,6 @@ public class PlayerController : NetworkBehaviour {
 	}
 
 	public void GameOver(){
-		gameObject.transform.position = ppos;
+		gameObject.transform.position = new Vector3 (0,2,0);
 	}
 }

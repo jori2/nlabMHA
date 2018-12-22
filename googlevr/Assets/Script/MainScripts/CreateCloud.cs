@@ -14,9 +14,11 @@ public class CreateCloud : NetworkBehaviour {
 	//脳波計
 	private int currentAtt;
 	void Start(){
+		
 		if(SceneManager.GetActiveScene().name == "MHAMain2"){
 			gameObject.GetComponent<MeshCollider> ().enabled = false;
 		}
+
 		//gameObject.GetComponent<NetworkIdentity> ().AssignClientAuthority (conn);
 		//player = GameObject.FindWithTag ("Player")
 //		if (OfflineSceneManager.scenename == "MHAMain") {
@@ -48,11 +50,16 @@ public class CreateCloud : NetworkBehaviour {
 	}
 
 //	void Update (){
-//
+
 //		if (OfflineSceneManager.scenename = "MHAMain") {
 //			gameObject.SetActive (true);
 //		} else {
 //			gameObject.SetActive (false);
 //		}
+//		if(SceneManager.GetActiveScene().name == "MHAMain2"){
+//			gameObject.SetActive (false);
+//		}
 //	}
+
+	
 }

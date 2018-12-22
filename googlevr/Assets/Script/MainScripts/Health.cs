@@ -5,13 +5,12 @@ using UnityEngine.UI;
 using UnityEngine.Networking;
 
 public class Health : NetworkBehaviour {
-	private int damage;
+	public int damage;
 	private int maxhealth;
 	bool isGameOver;
 	private GameObject gm;
 	private AudioSource sound;
 	//public GameObject mainCamera;
-	private Vector3 ppos;
 //	[SerializeField] GameObject[] blood;
 
 	// Use this for initialization
@@ -22,7 +21,6 @@ public class Health : NetworkBehaviour {
 		damage = 0;
 		isGameOver = false;
 		//mainCamera = transform.GetChild (1).gameObject;
-		ppos = gameObject.transform.position;
 	}
 
 	//敵の玉が当たったらdamageを１増やす
@@ -31,6 +29,7 @@ public class Health : NetworkBehaviour {
 		if(collision.gameObject.CompareTag("EnemyBullet")){
 			sound.PlayOneShot (sound.clip);
 			//mainCamera.GetComponent<ShakeCamera> ().CatchShake ();
+			//ダメージを受けるとシェイク
 			gameObject.GetComponent<ShakeCamera> ().CatchShake ();
 			damage++;
 //			for(int i = 0;i<maxhealth-1;i++){
@@ -50,9 +49,16 @@ public class Health : NetworkBehaviour {
 //				}
 				//現在の親子関係を解除して元の位置に戻す
 				transform.parent = null;
-				gameObject.transform.position = ppos;
+				gameObject.transform.position = new Vector3 (0,2,0);
 				damage = 0;
 			}
 		}
 	}
+
+//	void Update(){
+//		if(GvrController.ClickButtonDown == true){
+//			transform.parent = null;
+//			gameObject.transform.position = new Vector3 (0,2,0);
+//		}
+//	}
 }
