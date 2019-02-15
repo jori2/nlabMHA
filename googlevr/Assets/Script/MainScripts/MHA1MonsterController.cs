@@ -24,6 +24,8 @@ public class MHA1MonsterController : MonoBehaviour {
 		transform.rotation = newRotation;
 		//gameObject.transform.Translate (Vector3.up*Time.deltaTime);
 		gameObject.transform.localScale= new Vector3 (ENscale/(1+time*time*time*time),ENscale/(1+time*time*time*time),ENscale/(1+time*time*time*time));
+		//z方向に移動
+		transform.Translate(-0.1f,0,0);
 		if(time>=2f){
 			Destroy (gameObject);
 		}
