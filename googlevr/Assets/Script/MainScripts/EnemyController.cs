@@ -19,16 +19,12 @@ public class EnemyController : MonoBehaviour {
 
 	private AudioSource sound;
 
-
-	private int scalecount;
 	// Use this for initialization
 	void Start () {
 		parent = transform.root.gameObject;
 		if(SceneManager.GetActiveScene().name == "MHAMain" || SceneManager.GetActiveScene().name == "MHAMain2"){
 			player = GameObject.FindWithTag ("Player2");
 		}
-
-		scalecount = 1;
 
 		AudioSource audioSource = GetComponent<AudioSource> ();
 		sound = audioSource;
@@ -58,11 +54,6 @@ public class EnemyController : MonoBehaviour {
 		}else if(attack){
 			anim.AttackAni ();
 		}
-
-		if(scalecount<=60){
-			gameObject.transform.localScale = new Vector3(0.03f * scalecount,0.03f * scalecount,0.03f * scalecount);
-			scalecount++;
-		}
 	}
 
 	void EnemyFire(){
@@ -82,7 +73,7 @@ public class EnemyController : MonoBehaviour {
 			idle = false;
 			death = true;
 			sound.PlayOneShot (sound.clip);
-			Invoke ("DestroyEnemy",0.7f);
+			Invoke ("DestroyEnemy",1f);
 		}
 	}
 		
