@@ -59,8 +59,8 @@ public class EnemyController : MonoBehaviour {
 			anim.AttackAni ();
 		}
 
-		if(scalecount<=60){
-			gameObject.transform.localScale = new Vector3(0.03f * scalecount,0.03f * scalecount,0.03f * scalecount);
+		if(scalecount<=30){
+			gameObject.transform.localScale = new Vector3(0.06f * scalecount,0.06f * scalecount,0.06f * scalecount);
 			scalecount++;
 		}
 	}

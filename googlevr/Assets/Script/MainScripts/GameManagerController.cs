@@ -8,6 +8,12 @@ public class GameManagerController : NetworkBehaviour {
 	[SerializeField] GameObject goaltext;
 	private GameObject gm1;
 	public GameObject selectObject;
+	public int createcount;
+
+	void Start(){
+		createcount = 0;
+	}
+
 	//CmdDestroyMutualObjを呼ぶ
 	public void CallDestroyMethod(GameObject enemy){
 //		if(!isLocalPlayer){
@@ -121,5 +127,9 @@ public class GameManagerController : NetworkBehaviour {
 	//現在選択されているMOJは何か
 	public void GetSelectObject(GameObject SObject){
 		selectObject = SObject;
+	}
+
+	public void Setcreatecount(){
+		createcount++;
 	}
 }

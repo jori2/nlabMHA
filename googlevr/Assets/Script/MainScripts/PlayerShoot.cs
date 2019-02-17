@@ -28,10 +28,10 @@ public class PlayerShoot : NetworkBehaviour {
 //			sound.PlayOneShot (sound.clip);
 
 			bool isCharge = pc.SetCharge ();
-			//if(isCharge == true){
+//			if(isCharge == true){
 				Fire ();
 				pc.GetCharge (false);
-			//}
+//			}
 		}
 	}
 

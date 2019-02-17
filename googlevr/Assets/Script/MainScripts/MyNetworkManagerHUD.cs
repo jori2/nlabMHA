@@ -11,6 +11,7 @@ public class MyNetworkManagerHUD : MonoBehaviour
 	// 接続中であることを示すUIのGameObject
 	GameObject m_ConnectingText;
 	private bool istext;
+
 	// 接続状態種別
 	enum ConnectionState
 	{

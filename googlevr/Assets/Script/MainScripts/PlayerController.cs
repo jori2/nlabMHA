@@ -10,14 +10,18 @@ public class PlayerController : NetworkBehaviour {
 	[SerializeField] bool isplayer1;
 	[SerializeField] bool isplayer2;
 	[SerializeField] GameObject phychicEffect;
+	[SerializeField] GameObject FadeImage;
 	private int currentAtt;
 	public float energyPoint;
 	public bool isCharge;
 	private int effValue;
 	private AudioSource sound1;
 	private AudioSource sound2;
+	private AudioSource sound3;
 	ParticleSystem.MainModule par;
 	int delayframe;
+	FadeController fc;
+	private bool isFall;
 
 	void Start(){
 		if (!isLocalPlayer) {
@@ -28,6 +32,7 @@ public class PlayerController : NetworkBehaviour {
 		AudioSource[] audioSource = GetComponents<AudioSource> ();
 		sound1 = audioSource [0];
 		sound2 = audioSource [1];
+		sound3 = audioSource [2];
 		energyPoint = 0;
 		effValue = 0;
 		//effectの初期化
@@ -36,6 +41,8 @@ public class PlayerController : NetworkBehaviour {
 		par.startColor = Color.blue;
 		phychicEffect.gameObject.transform.localScale = new Vector3 (0.5f,0.5f,0.5f);
 		delayframe = 0;
+		fc = FadeImage.GetComponent<FadeController> ();
+		isFall = false;
 	}
 		
 	//ゴールを生成
@@ -79,12 +86,12 @@ public class PlayerController : NetworkBehaviour {
 		//集中度による制御
 		currentAtt = DisplayData.Attention;
 
-		if(delayframe <= 10){
+		if(delayframe <= 20){
 			delayframe++;
 			return;
 		}
 
-		if (energyPoint >= 60 && currentAtt >= 60) {
+		if (energyPoint >= 60) {
 
 			//SEの制御
 
@@ -118,7 +125,7 @@ public class PlayerController : NetworkBehaviour {
 				effValue = 2;
 			}
 
-		} else if(energyPoint < 60 && currentAtt >= 60) {
+		} else if(currentAtt >= 60) {
 
 //			sound2.Stop ();
 //			sound1.Play ();
@@ -157,13 +164,17 @@ public class PlayerController : NetworkBehaviour {
 				sound1.Stop ();
 			}
 
-			energyPoint -= 0.05f;
+			energyPoint -= 0.5f;
 
 			if(effValue == 1 || effValue == 2){
 				par.startColor = Color.blue;
 				phychicEffect.gameObject.transform.localScale = new Vector3 (0.5f,0.5f,0.5f);
 				effValue = 0;
 			}
+		}
+
+		if(isFall == true){
+			gameObject.transform.Translate (0,-Time.deltaTime*10,0);
 		}
 	}
 
@@ -176,6 +187,17 @@ public class PlayerController : NetworkBehaviour {
 	}
 
 	public void GameOver(){
+		sound3.PlayOneShot (sound3.clip);
+		if(gameObject.tag == "Player"){
+			isFall = true;
+		}
+		fc.isFadeOut = true;
+	}
+
+	public void ResetPosition(){
+		isFall = false;
+		fc.isFadeIn = true;
 		gameObject.transform.position = new Vector3 (0,2,0);
 	}
+
 }

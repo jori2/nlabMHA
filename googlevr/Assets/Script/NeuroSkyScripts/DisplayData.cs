@@ -409,4 +409,8 @@ public class DisplayData : MonoBehaviour {
 	public float SetDelta(){
 		return Delta;
 	}
+
+	public void Startstream(){
+		UnityThinkGear.StartStream();
+	}
 }

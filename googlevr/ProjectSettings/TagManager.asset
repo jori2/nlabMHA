@@ -24,6 +24,7 @@ TagManager:
   - Delta1
   - Att2
   - Delta2
+  - CheckPoint
   layers:
   - Default
   - TransparentFX

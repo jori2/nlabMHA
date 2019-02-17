@@ -10,13 +10,14 @@ public class Health : NetworkBehaviour {
 	bool isGameOver;
 	private GameObject gm;
 	private AudioSource sound;
+	private AudioSource sound2;
 	//public GameObject mainCamera;
 //	[SerializeField] GameObject[] blood;
 
 	// Use this for initialization
 	void Start () {
 		AudioSource[] audioSource = GetComponents<AudioSource> ();
-		sound = audioSource [2];
+		sound = audioSource [3];
 		maxhealth = 10;
 		damage = 0;
 		isGameOver = false;
@@ -47,9 +48,10 @@ public class Health : NetworkBehaviour {
 //					gm.gameObject.GetComponent<GameManagerController> ().CallP2GameOverMethod ();
 //					isGameOver = true;
 //				}
-				//現在の親子関係を解除して元の位置に戻す
+				//現在の親子関係を解除する
 				transform.parent = null;
-				gameObject.transform.position = new Vector3 (0,2,0);
+				gameObject.GetComponent<PlayerController> ().GameOver ();
+				//gameObject.transform.position = new Vector3 (0,2,0);
 				damage = 0;
 			}
 		}
